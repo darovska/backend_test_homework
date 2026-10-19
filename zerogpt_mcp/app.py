@@ -51,60 +51,58 @@ TOOL = {
 
 @app.get("/healthz")
 async def healthz():
-    return {"status": "ok", "upstream_ready": all(
-        bool(os.environ.get(n)) for n in
-        ("ZEROGPT_EMAIL", "ZEROGPT_API_PASSWORD", "ZEROGPT_API_KEY"))}
+    return {"status": "ok", "upstream_ready": bool(os.environ.get("ZEROGPT_API_KEY")), "provider_auth": "ApiKey"}
 
 
 async def upstream_check(text: str) -> dict[str, Any]:
-    email = os.environ.get("ZEROGPT_EMAIL", "")
-    password = os.environ.get("ZEROGPT_API_PASSWORD", "")
+    """Call official Business API using ApiKey authentication, tested against /myStats.
+
+    There is no need for an email/password or a Google OAuth browser session.
+    A text detection request can incur a small provider charge.
+    """
     api_key = os.environ.get("ZEROGPT_API_KEY", "")
-    if not (email and password and api_key):
-        raise ValueError("ZeroGPT Business API access is not configured. The website's Google login does not grant API access.")
+    if not api_key:
+        raise ValueError("ZeroGPT Business API key is not configured.")
     try:
         async with httpx.AsyncClient(timeout=45, follow_redirects=False) as client:
-            login = await client.post(PROVIDER_URL + "/api/auth/login", json={
-                "email": email, "password": password})
-            if not login.is_success:
-                raise ValueError(f"ZeroGPT API authentication failed (HTTP {login.status_code}).")
-            try:
-                token = login.json().get("data", {}).get("token")
-            except (ValueError, AttributeError):
-                token = None
-            if not isinstance(token, str) or not token:
-                raise ValueError("ZeroGPT did not issue an API login token.")
-            res = await client.post(PROVIDER_URL + "/api/detect/detectText",
-                                    headers={"Authorization": "Bearer " + token, "ApiKey": api_key},
-                                    json={"input_text": text})
-        if res.status_code == 402:
-            raise ValueError("ZeroGPT API account has insufficient prepaid balance.")
-        if res.status_code in (401, 403):
-            raise ValueError("ZeroGPT denied access: check credentials and allowed outbound IPs.")
-        if res.status_code == 429:
-            raise ValueError("ZeroGPT rate limit reached.")
-        if not res.is_success:
-            raise ValueError(f"ZeroGPT API returned HTTP {res.status_code}.")
-        try:
-            result = res.json()
-        except ValueError:
-            raise ValueError("ZeroGPT returned invalid JSON.")
-        if not isinstance(result, dict) or result.get("success") is False:
-            raise ValueError("ZeroGPT did not return a successful detection result.")
-        data = result.get("data")
-        if not isinstance(data, dict):
-            raise ValueError("ZeroGPT returned no structured detection result.")
-        output = {"provider": "ZeroGPT.com Business API",
-                  "caution": "AI detector scores cannot establish authorship."}
-        for key in ("fakePercentage", "aiWords", "textWords", "h", "feedback"):
-            if key in data:
-                output[key] = data[key]
-        if "fakePercentage" not in output and "h" not in output:
-            raise ValueError("ZeroGPT returned no documented score or highlighted sentences.")
-        return output
+            res = await client.post(
+                PROVIDER_URL + "/api/detect/detectText",
+                headers={"ApiKey": api_key},
+                json={"input_text": text},
+            )
     except httpx.HTTPError:
-        raise ValueError("ZeroGPT API could not be reached.")
-
+        raise ValueError("ZeroGPT Business API could not be reached.")
+    if res.status_code == 402:
+        raise ValueError("ZeroGPT API account has insufficient prepaid balance.")
+    if res.status_code in (401, 403):
+        raise ValueError(
+            f"ZeroGPT rejected the detection request (HTTP {res.status_code}); "
+            "check outbound IP whitelist, account permissions, or payment plan."
+        )
+    if res.status_code == 429:
+        raise ValueError("ZeroGPT API rate limit reached.")
+    if not res.is_success:
+        raise ValueError(f"ZeroGPT API returned HTTP {res.status_code}.")
+    try:
+        result = res.json()
+    except ValueError:
+        raise ValueError("ZeroGPT API returned malformed JSON.")
+    if not isinstance(result, dict) or result.get("success") is False:
+        code = result.get("code", "?") if isinstance(result, dict) else "?"
+        message = result.get("message", "No explanation") if isinstance(result, dict) else "Unknown"
+        raise ValueError(f"ZeroGPT detection failed ({code}): {str(message)[:180]}")
+    data = result.get("data")
+    if not isinstance(data, dict):
+        raise ValueError("ZeroGPT returned no detection data.")
+    out = {"provider": "ZeroGPT.com Business API",
+           "caution": "Detector scores cannot establish whether a human or AI authored the text."}
+    for name in ("fakePercentage", "aiWords", "textWords", "h", "feedback",
+                 "cost", "isHuman", "paragraphScore"):
+        if name in data:
+            out[name] = data[name]
+    if not any(key in out for key in ("fakePercentage", "h", "paragraphScore")):
+        raise ValueError("ZeroGPT returned no documented analysis scores.")
+    return out
 
 @app.post("/mcp")
 async def mcp(request: Request):
@@ -216,5 +214,35 @@ async def read_only_api_probe():
                                         )
                 except httpx.HTTPError:
                     print("ZeroGPT diagnostic: method=" + method + " network failure", flush=True)
+
+
+            # A fixed public technical sample; only used for an explicitly enabled
+            # one-time integration test, never a user's editorial draft.
+            if os.environ.get("ZEROGPT_DIAG_SAMPLE") == "1":
+                sample = (
+                    "Это техническая проверка работы API. Данный текст не является "
+                    "личным документом и не содержит конфиденциальных данных. "
+                    "Мы отправляем его исключительно для тестирования соединения. "
+                    "Проверка должна вернуть ответ с оценкой текста, временем "
+                    "обработки и количеством слов. Точные проценты здесь не "
+                    "имеют редакционного значения. Главное, чтобы сервер "
+                    "подтвердил успешный обмен данными с ZeroGPT, а результат "
+                    "соответствовал документированной структуре ответа. "
+                    "После теста автоматическую проверку необходимо выключить."
+                )
+                try:
+                    result = await upstream_check(sample)
+                    print(
+                        "ZeroGPT diagnostic: sample analysis success=True "
+                        "score=" + str(result.get("fakePercentage", "unknown")) +
+                        " words=" + str(result.get("textWords", "unknown")) +
+                        " cost=" + str(result.get("cost", "unreported")),
+                        flush=True,
+                    )
+                except ValueError as exc:
+                    print(
+                        "ZeroGPT diagnostic: sample analysis error=" +
+                        str(exc)[:250], flush=True
+                    )
 
     asyncio.create_task(check())
