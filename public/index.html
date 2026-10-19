@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1018">
+  <title>AnonHaven Trend Radar | Редакционные ТЗ</title>
+  <meta name="description" content="Ежедневный редакционный трендрадар AnonHaven: кибербезопасность, ИИ, приоритетные темы, полные технические задания и архив выпусков.">
+  <meta property="og:title" content="AnonHaven Trend Radar">
+  <meta property="og:description" content="Приоритетные темы, проверенные источники, готовые SEO-ТЗ и история редакционных выпусков.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="shell topbar-inner">
+      <a href="./" class="brand" aria-label="AnonHaven Trend Radar"><span class="brand-icon">▦</span> ANONHAVEN <span class="brand-suffix">// TREND RADAR</span></a>
+      <span class="topbar-right">EDITORIAL INTELLIGENCE / 2026</span>
+    </div>
+  </div>
+  <div class="shell">
+    <header class="hero">
+      <p class="kicker"><span class="live-dot"></span> Редакционный трендвотчинг · безопасность и ИИ</p>
+      <h1>AnonHaven <span>Trend Radar</span></h1>
+      <p class="hero-lead">Сильные инфоповоды, проверенная фактура и полные редакционные ТЗ. Каждый выпуск сохраняется в истории, а свежий всегда находится на первом экране.</p>
+      <div id="stats" class="stats" aria-live="polite"><div class="skeleton">Загружаем выпуск…</div></div>
+      <p class="disclaimer"><span aria-hidden="true">ⓘ</span> Редакционные баллы — экспертная оценка, не измеренные поисковые запросы, позиции или показы в ИИ.</p>
+    </header>
+    <div class="navrow">
+      <nav class="tabs" aria-label="Разделы" id="tabs">
+        <button type="button" data-tab="priorities" class="active" aria-current="page">Приоритеты</button>
+        <button type="button" data-tab="briefs">Полные ТЗ</button>
+        <button type="button" data-tab="reserve">Резерв</button>
+        <button type="button" data-tab="sources">Источники</button>
+        <button type="button" data-tab="history">История <span id="history-count"></span></button>
+      </nav>
+      <button class="refresh" type="button" id="refresh" title="Загрузить последний выпуск">↻ Обновить</button>
+    </div>
+    <section id="filters" class="filters" aria-label="Поиск и фильтры">
+      <label class="search-label"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Поиск по темам, ключам, организациям…" aria-label="Поиск по темам"></label>
+      <div class="kind-filters" role="group" aria-label="Формат материалов">
+        <button type="button" data-kind="Все" class="selected">Все</button>
+        <button type="button" data-kind="Новости">Новости</button>
+        <button type="button" data-kind="Аналитика">Аналитика</button>
+      </div>
+      <select id="sort" aria-label="Сортировка"><option value="priority">По приоритету</option><option value="name">По названию</option></select>
+    </section>
+    <main id="content" class="content" tabindex="-1" aria-live="polite"><p class="empty">Открываем данные…</p></main>
+    <footer class="footer"><span>AnonHaven Trend Radar · публичный архив для чтения</span><a href="https://anonhaven.com/" target="_blank" rel="noopener noreferrer">anonhaven.com ↗</a></footer>
+  </div>
+</body>
+</html>
