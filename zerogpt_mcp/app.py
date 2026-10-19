@@ -204,6 +204,20 @@ async def read_only_api_probe():
                     )
                     if is_success:
                         data = body.get("data")
+                        if method == "ApiKey" and isinstance(data, dict):
+                            print(
+                                "ZeroGPT diagnostic: stats fields=" +
+                                ",".join(sorted(str(k) for k in data.keys())),
+                                flush=True
+                            )
+                            for field, val in data.items():
+                                name = str(field).lower()
+                                if any(tag in name for tag in ("package", "plan", "subscription", "purchase", "credit")):
+                                    if isinstance(val, (str, int, float, bool)) and len(str(val)) < 80:
+                                        print(
+                                            "ZeroGPT diagnostic: account " + str(field) +
+                                            "=" + str(val), flush=True
+                                        )
                         if isinstance(data, dict):
                             for field, val in data.items():
                                 if "balance" in field.lower() or "credit" in field.lower():
@@ -215,6 +229,40 @@ async def read_only_api_probe():
                 except httpx.HTTPError:
                     print("ZeroGPT diagnostic: method=" + method + " network failure", flush=True)
 
+
+
+            try:
+                pkg = await client.get(
+                    PROVIDER_URL + "/api/dashboard/getPackages",
+                    headers={"ApiKey": key}
+                )
+                print(
+                    "ZeroGPT diagnostic: getPackages HTTP=" + str(pkg.status_code),
+                    flush=True
+                )
+                if pkg.is_success:
+                    info = pkg.json()
+                    print(
+                        "ZeroGPT diagnostic: getPackages success=" +
+                        str(info.get("success", "unknown") if isinstance(info, dict) else "unknown"),
+                        flush=True
+                    )
+                    data = info.get("data") if isinstance(info, dict) else None
+                    if isinstance(data, list):
+                        print("ZeroGPT diagnostic: available API packages=" + str(len(data)), flush=True)
+                        for option in data[:10]:
+                            if isinstance(option, dict):
+                                summary = {k: v for k, v in option.items()
+                                           if str(k).lower() in
+                                           ("name", "title", "id", "type", "price", "priceusd", "priceper1000",
+                                            "isactive", "currency", "description")
+                                           and isinstance(v, (str, int, float, bool))}
+                                print(
+                                    "ZeroGPT diagnostic: package " + str(summary)[:280],
+                                    flush=True
+                                )
+            except (httpx.HTTPError, ValueError):
+                print("ZeroGPT diagnostic: getPackages unavailable", flush=True)
 
             # A fixed public technical sample; only used for an explicitly enabled
             # one-time integration test, never a user's editorial draft.
