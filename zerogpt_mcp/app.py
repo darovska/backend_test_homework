@@ -210,6 +210,29 @@ async def read_only_api_probe():
                                 ",".join(sorted(str(k) for k in data.keys())),
                                 flush=True
                             )
+                            for section in ("subscription", "balancePackage"):
+                                part = data.get(section)
+                                if isinstance(part, dict):
+                                    safe = {}
+                                    for field, val in part.items():
+                                        if str(field).lower() in (
+                                            "id", "status", "typeid", "packageid", "packagename",
+                                            "description", "isactive", "active", "price",
+                                            "fixedpricepermonth", "costperthousand", "balance"
+                                        ) and isinstance(val, (str, int, float, bool)):
+                                            safe[field] = val
+                                    print(
+                                        "ZeroGPT diagnostic: " + section + " " +
+                                        str(safe)[:300] + " fields=" +
+                                        ",".join(sorted(str(k) for k in part.keys())),
+                                        flush=True
+                                    )
+                                elif isinstance(part, list):
+                                    print("ZeroGPT diagnostic: " + section + " items=" +
+                                          str(len(part)), flush=True)
+                                else:
+                                    print("ZeroGPT diagnostic: " + section + " type=" +
+                                          type(part).__name__, flush=True)
                             for field, val in data.items():
                                 name = str(field).lower()
                                 if any(tag in name for tag in ("package", "plan", "subscription", "purchase", "credit")):
