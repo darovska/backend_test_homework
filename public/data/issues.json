@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 1,
+  "site": "https://anonhaven.com/",
+  "timezone": "Europe/Minsk",
+  "issues": [
+    {
+      "date": "2026-10-19",
+      "checkedAt": "19 октября 2026, 19:02 (Минск)",
+      "briefs": [
+        {
+          "slug": "connectwise",
+          "eventId": "connectwise-cloudbackup-2026-10",
+          "score": 92,
+          "kind": "Новости",
+          "format": "Срочная новость",
+          "category": "Инциденты",
+          "status": "На выбор",
+          "urgency": "Сегодня",
+          "volume": "4500–6000 знаков",
+          "h1": "ConnectWise отключила облачные сервисы после взлома",
+          "angle": "Компрометация доступа доверенных приложений поставщика резервного копирования и клиентские среды Microsoft 365.",
+          "timeline": [
+            "15.10 — дата события",
+            "16.10, 17:47 UTC — раскрытие",
+            "19.10, 13:45 UTC — существенное обновление"
+          ],
+          "primary": [
+            {
+              "label": "ConnectWise Trust — Advisories",
+              "url": "https://www.connectwise.com/company/trust/advisories"
+            },
+            {
+              "label": "Huntress — Vendor credential enables unauthorized access",
+              "url": "https://www.huntress.com/blog/vendor-credential-enables-unauthorized-access"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "SecurityWeek",
+              "url": "https://www.securityweek.com/connectwise-suspends-cloud-services-in-response-to-cyberattack/"
+            }
+          ],
+          "facts": [
+            "Зафиксирован посторонний доступ к идентификаторам приложений Cloud Backup.",
+            "19.10 в 13:45 UTC сервисы Cloud Backup, SaaS Security и Cloud Management были приостановлены.",
+            "Huntress сообщала о входах в 162 клиентские среды по состоянию на 16.10, 19:00 UTC.",
+            "Срока восстановления в проверенном advisory не было."
+          ],
+          "notConfirmed": [
+            "Что 162 среды — это все жертвы.",
+            "Что затронуты все клиенты Microsoft 365.",
+            "Что факт входа доказывает кражу файлов."
+          ],
+          "seoTitle": "Взлом ConnectWise: что произошло с Microsoft 365",
+          "seoDescription": "ConnectWise отключила облачные сервисы после атаки. Что известно о доступе к Microsoft 365, перебоях резервного копирования и ходе расследования.",
+          "mainKeyword": "ConnectWise взлом",
+          "extraKeywords": [
+            "ConnectWise Microsoft 365",
+            "SkyKick взлом",
+            "ConnectWise Cloud Backup не работает",
+            "компрометация приложения Microsoft 365"
+          ],
+          "proposedUrl": "/news/connectwise-vzlom-microsoft-365-cloud-backup/",
+          "h2": [
+            "Что случилось с ConnectWise",
+            "Как приложение получало доступ к Microsoft 365",
+            "Что установлено о масштабе инцидента",
+            "Какие сведения еще ждут подтверждения",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Что произошло с ConnectWise и какие сервисы затронуты?",
+          "aiAnswer": "ConnectWise приостановила Cloud Backup, SaaS Security и Cloud Management после инцидента с доступом через учетные данные приложений. Эти приложения имели разрешения в средах клиентов Microsoft 365. На 19 октября сервисы оставались недоступны, расследование продолжалось. Подтвержденные входы в клиентские среды еще не устанавливают полный масштаб доступа к данным или их кражи.",
+          "entities": [
+            "ConnectWise",
+            "SkyKick",
+            "Microsoft 365",
+            "Microsoft Entra",
+            "Microsoft Graph",
+            "Huntress",
+            "Cloud Backup"
+          ],
+          "contribution": "Таблица «сервис — последствие — время проверки».",
+          "faq": [
+            {
+              "q": "Какие сервисы недоступны?",
+              "a": "Cloud Backup, SaaS Security и Cloud Management — на контрольное время проверки."
+            },
+            {
+              "q": "Когда восстановят?",
+              "a": "Подтвержденного срока нет."
+            },
+            {
+              "q": "Вход доказывает утечку?",
+              "a": "Нет, не сам по себе."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/docker-hub-dva-goda-pozvolyal-vydavat-sebya-za-drugogo-polzovatelya/",
+            "https://anonhaven.com/kak-zloumyshlenniki-vzlamyvayut-paroli-i-chto-s-etim-delat/"
+          ],
+          "illustration": "Нейтральные облачные приложения и ключ.",
+          "alt": "Учетные данные облачного приложения и доступ к корпоративным документам"
+        },
+        {
+          "slug": "mvd-barnaul",
+          "eventId": "mvd-barnaul-pizza-data-2026-10",
+          "score": 90,
+          "kind": "Новости",
+          "format": "Новость",
+          "category": "Киберпреступность",
+          "status": "На выбор",
+          "urgency": "Сегодня",
+          "volume": "3000–4500 знаков",
+          "h1": "В Барнауле задержали подозреваемого во взломе пиццерий",
+          "angle": "Официальный релиз МВД о задержании по делу о клиентских данных сети пиццерий и заявление об использовании ИИ.",
+          "timeline": [
+            "19.10, 09:43 — официальный релиз МВД",
+            "Дату самого задержания установить нельзя"
+          ],
+          "primary": [
+            {
+              "label": "МВД Медиа — официальный представитель",
+              "url": "https://mvdmedia.ru/news/ofitsialnyy-predstavitel/sotrudnikami-bstm-mvd-rossii-presechena-deyatelnost-khakera-podozrevaemogo-v-nepravomernom-dostupe-k/"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "SecPost (контекст)",
+              "url": "https://secpost.ru/zaderzhan-eshhe-odin-podozrevaemyj-vo-vzlome-dodo-piczczy"
+            }
+          ],
+          "facts": [
+            "МВД заявило о задержании в Барнауле в деле о клиентских данных сети пиццерий.",
+            "Указаны домашний арест и ч. 3 ст. 272.1 УК РФ.",
+            "Ведомство заявило об использовании ИИ для автоматизации.",
+            "В официальном релизе не названы сеть, фигурант и группировка."
+          ],
+          "notConfirmed": [
+            "«Додо Пицца» и Data Suckers — интерпретация редакции SecPost, а не установленный в релизе факт.",
+            "Технического подтверждения использования ИИ нет.",
+            "Подозрение нельзя приравнивать к доказанной виновности."
+          ],
+          "seoTitle": "Взлом сети пиццерий: МВД раскрыло детали задержания",
+          "seoDescription": "МВД сообщило о задержании в Барнауле по делу о данных клиентов сети пиццерий. Что известно о расследовании и применении ИИ в предполагаемых атаках.",
+          "mainKeyword": "задержание хакера Барнаул",
+          "extraKeywords": [
+            "взлом сети пиццерий",
+            "МВД утечка данных пиццерии",
+            "ИИ кибератаки Барнаул",
+            "данные клиентов сети пиццерий"
+          ],
+          "proposedUrl": "/news/mvd-zaderzhanie-barnaul-dannye-seti-piccerij/",
+          "h2": [
+            "Что сообщило МВД",
+            "Какие данные фигурируют в деле",
+            "Что известно о применении ИИ",
+            "Почему название сети требует отдельного подтверждения",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Что МВД подтвердило о задержании по делу о данных пиццерий?",
+          "aiAnswer": "МВД 19 октября сообщило о задержании в Барнауле подозреваемого по делу о данных клиентов крупной сети пиццерий. Ведомство описало фишинговые атаки и заявило об использовании ИИ для автоматизации. Фигурант находится под домашним арестом. Название сети и группировки в официальном сообщении не указано; связь с «Додо Пиццей» остается версией отдельных публикаций.",
+          "entities": [
+            "МВД России",
+            "БСТМ МВД",
+            "Барнаул",
+            "персональные данные",
+            "ИИ",
+            "домашний арест"
+          ],
+          "contribution": "Таблица «подтверждено в релизе / требует подтверждения».",
+          "faq": [
+            {
+              "q": "Какую сеть взломали?",
+              "a": "МВД не назвало."
+            },
+            {
+              "q": "Мера пресечения?",
+              "a": "Домашний арест."
+            },
+            {
+              "q": "Доказан ИИ?",
+              "a": "МВД заявило об этом, технических материалов нет."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/fbr-zaderzhalo-peregovorshika-s-hakerami-sled-vedet-k-shinyhunters/",
+            "https://anonhaven.com/issledovanie-2026-goda-kak-ii-vyshel-iz-chata-i-nachal-pomogat-hakeram/"
+          ],
+          "illustration": "Папка расследования, ноутбук, анонимная карточка заказа.",
+          "alt": "Расследование неправомерного доступа к данным заказов сети пиццерий"
+        },
+        {
+          "slug": "ghostaction",
+          "eventId": "ghostaction-stage2-font-2026-10-14",
+          "score": 84,
+          "kind": "Новости",
+          "format": "Разбор атаки",
+          "category": "Угрозы",
+          "status": "На выбор",
+          "urgency": "24–48 часов",
+          "volume": "4500–6500 знаков",
+          "h1": "GhostAction прячет похититель ключей в файле шрифта",
+          "angle": "Вторая стадия GhostAction: похититель под видом .woff2 и задача VS Code в скомпрометированных репозиториях.",
+          "timeline": [
+            "14–15.10 — события",
+            "16.10 — исследование",
+            "19.10 — пересказ в СМИ"
+          ],
+          "primary": [
+            {
+              "label": "OpenSourceMalware — исследование",
+              "url": "https://opensourcemalware.com/blog/ghostaction-copycats-polinrider-by-hiding-a-stealer-in-a-fake-font-file"
+            },
+            {
+              "label": "VS Code Docs — Tasks",
+              "url": "https://code.visualstudio.com/docs/debugtest/tasks"
+            },
+            {
+              "label": "VS Code Docs — Workspace Trust",
+              "url": "https://code.visualstudio.com/docs/editing/workspaces/workspace-trust"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "The Hacker News (пересказ)",
+              "url": "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"
+            }
+          ],
+          "facts": [
+            "Исследователи выявили 94 репозитория, 79 из них удалось проанализировать.",
+            "Исполняемый код замаскирован под файл .woff2.",
+            "Задача VS Code запускает код при соответствующих условиях.",
+            "Похититель ищет облачные, SSH- и ИИ-секреты."
+          ],
+          "notConfirmed": [
+            "94 — не число зараженных.",
+            "Нельзя утверждать, что любое открытие проекта запускает код: Workspace Trust ограничивает автозадачи.",
+            "Общие операторы с PolinRider не установлены."
+          ],
+          "seoTitle": "GhostAction: вредоносный шрифт и кража ключей через VS Code",
+          "seoDescription": "GhostAction получила вторую стадию атаки через GitHub. Что нашли исследователи и при каких условиях вредоносная задача запускается в VS Code.",
+          "mainKeyword": "GhostAction",
+          "extraKeywords": [
+            "GhostAction GitHub",
+            "VS Code tasks.json безопасность",
+            "GitHub Actions кража секретов",
+            "вредоносный файл шрифта WOFF2"
+          ],
+          "proposedUrl": "/news/ghostaction-vscode-shrift-krazha-klyuchej/",
+          "h2": [
+            "Что изменилось в GhostAction",
+            "Зачем атакующим файл с расширением шрифта",
+            "Когда VS Code выполняет задачу из проекта",
+            "Что означает обнаружение 94 репозиториев",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Как GhostAction использует файл шрифта и задачи VS Code?",
+          "aiAnswer": "Исследователи OpenSourceMalware описали новую стадию GhostAction: в скомпрометированные репозитории добавляли похититель учетных данных под видом файла шрифта и задачу для VS Code. Они выявили 94 репозитория, из которых смогли изучить 79. Запуск зависел от выполнения задачи: официальная документация VS Code запрещает автоматические задачи в недоверенных рабочих пространствах.",
+          "entities": [
+            "GitHub",
+            "VS Code",
+            "tasks.json",
+            "WOFF2",
+            "Workspace Trust",
+            "API-ключи"
+          ],
+          "contribution": "Таблица «компонент / роль / условие».",
+          "faq": [
+            {
+              "q": "Сколько репозиториев?",
+              "a": "94 выявлены, 79 исследованы."
+            },
+            {
+              "q": "Опасен ли любой WOFF2?",
+              "a": "Нет, расширение служило маскировкой."
+            },
+            {
+              "q": "Достаточно открыть проект?",
+              "a": "Нет, важны доверие к рабочему пространству и разрешение на запуск задач."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/docker-hub-dva-goda-pozvolyal-vydavat-sebya-za-drugogo-polzovatelya/",
+            "https://anonhaven.com/kak-zloumyshlenniki-vzlamyvayut-paroli-i-chto-s-etim-delat/"
+          ],
+          "illustration": "Папка репозитория и маскирующийся файл.",
+          "alt": "Вредоносный компонент под видом файла шрифта в репозитории программного проекта"
+        },
+        {
+          "slug": "muse-spark-open",
+          "eventId": "muse-spark-open-2026-10-15",
+          "score": 74,
+          "kind": "Аналитика",
+          "format": "SEO-разбор",
+          "category": "Аналитика",
+          "status": "На выбор",
+          "urgency": "Аналитика недели",
+          "volume": "6500–8000 знаков",
+          "h1": "Muse Spark Open: локальный запуск и контроль данных",
+          "angle": "Что реально дает самостоятельное размещение модели с открытыми весами. Не выдавать за свежую утечку.",
+          "timeline": [
+            "15.10 — релиз Meta"
+          ],
+          "primary": [
+            {
+              "label": "Meta Research — Muse Spark Open",
+              "url": "https://research.meta.ai/blog/muse-spark-open"
+            },
+            {
+              "label": "Hugging Face — Muse-Spark-Open-816B-A42B",
+              "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+            },
+            {
+              "label": "Apple ML Research — MLX distributed inference",
+              "url": "https://machinelearning.apple.com/research/mlx-distributed-inference"
+            }
+          ],
+          "coverage": [],
+          "facts": [
+            "В первичных описаниях заявлены 816 млрд параметров, 42 млрд активных, контекст 1 млн.",
+            "Модель с опубликованными весами и ограничениями Muse Model License.",
+            "Apple показала запуск в MLX на двух и четырех Mac Studio."
+          ],
+          "notConfirmed": [
+            "Запуск на обычном ноутбуке не обещать.",
+            "Полную приватность не обещать.",
+            "Открытые веса ≠ свободная лицензия.",
+            "Поведение сетевых инструментов агента нужно проверять отдельно."
+          ],
+          "seoTitle": "Muse Spark Open: локальный запуск, лицензия, безопасность",
+          "seoDescription": "Что дает локальный запуск Muse Spark Open: требования к инфраструктуре, условия лицензии и контроль данных при работе ИИ-агентов и внешних инструментов.",
+          "mainKeyword": "Muse Spark Open локальный запуск",
+          "extraKeywords": [
+            "Muse Spark Open лицензия",
+            "Muse Spark Open требования",
+            "Muse Spark Open безопасность",
+            "Muse Spark Open открытые веса",
+            "локальная ИИ модель защита данных"
+          ],
+          "proposedUrl": "/muse-spark-open-lokalnyj-zapusk-licenziya-bezopasnost/",
+          "h2": [
+            "Что Meta выпустила 15 октября",
+            "Как устроен локальный запуск Muse Spark Open",
+            "Какие условия действуют для весов",
+            "Где остаются риски для данных",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Дает ли локальный запуск Muse Spark Open полный контроль над данными?",
+          "aiAnswer": "Muse Spark Open можно развернуть на собственной инфраструктуре, но контроль данных зависит от всей системы вокруг модели. Отдельно нужно учитывать подключенные инструменты, журналы, сетевые соединения и права доступа. Meta открыла веса 15 октября 2026 года под собственной лицензией, а Apple показала запуск на нескольких Mac Studio. Это основа для самостоятельного размещения, но не подтверждение безопасности любой конфигурации.",
+          "entities": [
+            "Meta",
+            "Muse Model License",
+            "Hugging Face",
+            "MLX",
+            "Mac Studio",
+            "локальный инференс",
+            "ИИ-агенты"
+          ],
+          "contribution": "Сравнение самостоятельного размещения и API по маршруту данных и ответственности.",
+          "faq": [
+            {
+              "q": "Можно ли запускать самостоятельно?",
+              "a": "Да, при достаточных ресурсах и соблюдении условий лицензии."
+            },
+            {
+              "q": "Лицензия свободная?",
+              "a": "Нет, действуют собственные условия."
+            },
+            {
+              "q": "Полный офлайн?",
+              "a": "Зависит от инструментов и программы, не проверено."
+            },
+            {
+              "q": "Тест Apple подходит любому ПК?",
+              "a": "Нет."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/google-vypustila-gemini-4-argon-ceny-i-ogranicheniya/",
+            "https://anonhaven.com/news/zayavka-v-github-stanovilas-komandoj-u-claude-code-gemini-cli-i-codex-nashli-opasnye-cepochki-atak/"
+          ],
+          "illustration": "Локальные серверы и внешние инструменты.",
+          "alt": "Самостоятельное размещение ИИ-модели и подключенные внешние инструменты"
+        },
+        {
+          "slug": "postgresql-19",
+          "eventId": "postgresql19-rc1-2026-10-15",
+          "score": 74,
+          "kind": "Аналитика",
+          "format": "Аналитическое продолжение",
+          "category": "Аналитика",
+          "status": "На выбор",
+          "urgency": "Аналитика недели",
+          "volume": "6000–7500 знаков",
+          "h1": "PostgreSQL 19: как ИИ-ревью изменило подготовку релиза",
+          "angle": "Официальный график PostgreSQL 19 и объяснение участника проекта об откатах функций и LLM-assisted ревью.",
+          "timeline": [
+            "09.10 — личный комментарий в блоге",
+            "15.10 — официальный RC1",
+            "18.10 — освещение в СМИ"
+          ],
+          "primary": [
+            {
+              "label": "PostgreSQL — 19 RC 1 Released",
+              "url": "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/"
+            },
+            {
+              "label": "Peter Eisentraut — The reverts will continue…",
+              "url": "https://peter.eisentraut.org/blog/2026/10/09/the-reverts-will-continue-until-morale-improves"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "SecurityLab (контекст)",
+              "url": "https://www.securitylab.ru/news/578886.php"
+            }
+          ],
+          "facts": [
+            "PostgreSQL 19 RC1 опубликован 15.10.",
+            "RC2 планировался на 12.11, общий выпуск — 19.11 при отсутствии блокирующих препятствий.",
+            "PGDG объясняет график желанием включить пакет исправлений.",
+            "Автор блога описывает откат 8–10 функций, LLM-assisted ревью, нагрузку на команду и другие факторы."
+          ],
+          "notConfirmed": [
+            "Нельзя объявлять все дефекты CVE.",
+            "Нельзя утверждать, что ИИ единолично задержал релиз.",
+            "40 отчетов не равны 40 уязвимостям."
+          ],
+          "seoTitle": "PostgreSQL 19: дата релиза и влияние ИИ-ревью",
+          "seoDescription": "Когда выйдет PostgreSQL 19 и как ИИ-ревью повлияло на подготовку версии: официальный график, откаты функций и нагрузка на проверку найденных ошибок.",
+          "mainKeyword": "PostgreSQL 19 дата выхода",
+          "extraKeywords": [
+            "PostgreSQL 19 ИИ ревью",
+            "PostgreSQL 19 RC1",
+            "PostgreSQL 19 перенос релиза",
+            "LLM проверка кода PostgreSQL",
+            "ИИ поиск ошибок open source"
+          ],
+          "proposedUrl": "/postgresql-19-ii-revyu-data-reliza/",
+          "h2": [
+            "Что известно о графике PostgreSQL 19",
+            "Почему из версии убрали часть функций",
+            "Как ИИ-ревью увеличивает очередь исправлений",
+            "Чем баг отличается от уязвимости",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Почему PostgreSQL 19 готовят к ноябрю и какую роль сыграло ИИ-ревью?",
+          "aiAnswer": "Общий выпуск PostgreSQL 19 запланирован на 19 ноября 2026 года: команда хочет включить дополнительный набор исправлений, а перед этим выпустить второй релиз-кандидат. ИИ-ревью обсуждается отдельно в объяснении участника проекта о поздних находках и откатах функций. Эти источники показывают нагрузку на проверку кода, но не подтверждают, что нейросети стали единственной причиной изменения графика.",
+          "entities": [
+            "PGDG",
+            "PostgreSQL 19 RC1/RC2",
+            "Питер Айзентраут",
+            "LLM-assisted code review"
+          ],
+          "contribution": "Таблица статусов и объяснение отличия дефекта от уязвимости.",
+          "faq": [
+            {
+              "q": "Когда выйдет?",
+              "a": "19 ноября 2026 года по плану."
+            },
+            {
+              "q": "RC1 стабильная?",
+              "a": "Нет."
+            },
+            {
+              "q": "ИИ нашел 40 CVE?",
+              "a": "Не подтверждено."
+            },
+            {
+              "q": "Проблемы из-за вайб-кодинга?",
+              "a": "Автор отмечает, что код в основном был написан раньше."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/ii-udvoil-potok-bag-reportov-i-zavalil-komandy-bezopasnosti-shumom/",
+            "https://anonhaven.com/zen-ai-pentest-ii-agent-kotoryj-sam-provodit-pentest-chto-umeet-chego-ne-umeet-i-stoit-li-probovat/"
+          ],
+          "illustration": "Интерфейс ревью кода и очередь дефектов.",
+          "alt": "Проверка кода PostgreSQL и очередь дефектов перед выпуском новой версии"
+        }
+      ],
+      "reserve": [
+        {
+          "title": "OpenCode Console",
+          "note": "Сильный сигнал, но первичный пост в X недоступен, даты уведомлений расходятся. Проверить первичное заявление перед выпуском.",
+          "links": [
+            "https://www.stepsecurity.io/blog/opencode-security-breach"
+          ]
+        },
+        {
+          "title": "FirstVDS / VMmanager 6",
+          "note": "Официальное сообщение от 17.10 индексируется, но не прочитано целиком; changelog исправлений — 18.10. Не представлять 6000 серверов числом жертв.",
+          "links": [
+            "https://t.me/TakeFirstNews/1463",
+            "https://www.ispsystem.ru/vm-changelog"
+          ]
+        },
+        {
+          "title": "NGINX",
+          "note": "Возможный SEO-разбор. Исправленные версии 1.30.6 / 1.31.7 выпущены 14.10; статья СМИ от 19.10 — не новая дата патча.",
+          "links": [
+            "https://nginx.org/en/security_advisories.html"
+          ]
+        },
+        {
+          "title": "Действия Claude при тестировании",
+          "note": "На AnonHaven уже есть материал от 12.10. Новый дубль без новой фактуры не создавать.",
+          "links": [
+            "https://anonhaven.com/news/claude-vzlomal-server-i-otpravil-vydumannuyu-navodku-policii/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "StepSecurity",
+          "url": "https://www.stepsecurity.io/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "Kaspersky",
+          "url": "https://www.kaspersky.ru/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "CyberPress",
+          "url": "https://cyberpress.org/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "CybersecurityNews",
+          "url": "https://cybersecuritynews.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "Xakep",
+          "url": "https://xakep.ru/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "SecPost",
+          "url": "https://secpost.ru/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "novee.security",
+          "url": "https://novee.security/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "PolySwarm",
+          "url": "https://polyswarm.io/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "Securonix",
+          "url": "https://www.securonix.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "CNews Safe",
+          "url": "https://safe.cnews.ru/",
+          "type": "Сайт",
+          "status": "Частично",
+          "note": "Главная не загрузилась, использован поиск по домену."
+        },
+        {
+          "name": "BI.ZONE",
+          "url": "https://bi.zone/news/",
+          "type": "Сайт",
+          "status": "Частично",
+          "note": "Список дал только навигацию, отдельная новость открыта."
+        },
+        {
+          "name": "Check Point Research",
+          "url": "https://research.checkpoint.com/latest-publications/",
+          "type": "Сайт",
+          "status": "Частично",
+          "note": "Список выдавал старые карточки, прямой отчет прочитан."
+        },
+        {
+          "name": "@cyberyozh_official",
+          "url": "https://t.me/cyberyozh_official",
+          "type": "Telegram",
+          "status": "Прочитан",
+          "note": "Свежие публикации; полный архив не просматривался."
+        },
+        {
+          "name": "@neuro_channel",
+          "url": "https://t.me/neuro_channel",
+          "type": "Telegram",
+          "status": "Прочитан",
+          "note": "Свежие публикации; полный архив не просматривался."
+        },
+        {
+          "name": "@ai_exee",
+          "url": "https://t.me/ai_exee",
+          "type": "Telegram",
+          "status": "Прочитан",
+          "note": "Свежие публикации; полный архив не просматривался."
+        }
+      ],
+      "limitations": [
+        "Поисковые показатели GSC и GA4 для anonhaven.com не получены.",
+        "Баллы — редакционные гипотезы, а не измеренный спрос, трафик или цитирования в ИИ-ответах.",
+        "Архивы Telegram-каналов полностью не просматривались.",
+        "URL новых материалов — предложенные, такие страницы на anonhaven.com пока не существуют.",
+        "Данные статичны на момент проверки; это не живая лента."
+      ]
+    }
+  ]
+}
