@@ -210,6 +210,25 @@ async def read_only_api_probe():
                                 ",".join(sorted(str(k) for k in data.keys())),
                                 flush=True
                             )
+                            whitelist = data.get("ipWhitelist")
+                            if isinstance(whitelist, list):
+                                safe_ips = []
+                                for entry in whitelist:
+                                    if isinstance(entry, str):
+                                        safe_ips.append(entry[:45])
+                                    elif isinstance(entry, dict):
+                                        value = entry.get("ip", entry.get("address", entry.get("ipAddress")))
+                                        if isinstance(value, str):
+                                            safe_ips.append(value[:45])
+                                print(
+                                    "ZeroGPT diagnostic: whitelist=" + str(safe_ips),
+                                    flush=True
+                                )
+                            elif isinstance(whitelist, str):
+                                print(
+                                    "ZeroGPT diagnostic: whitelist=" +
+                                    whitelist[:300], flush=True
+                                )
                             for section in ("subscription", "balancePackage"):
                                 part = data.get(section)
                                 if isinstance(part, dict):
@@ -286,6 +305,34 @@ async def read_only_api_probe():
                                 )
             except (httpx.HTTPError, ValueError):
                 print("ZeroGPT diagnostic: getPackages unavailable", flush=True)
+
+
+            try:
+                billing = await client.get(
+                    PROVIDER_URL + "/api/dashboard/billing-history",
+                    headers={"ApiKey": key}
+                )
+                print(
+                    "ZeroGPT diagnostic: billing-history HTTP=" +
+                    str(billing.status_code),
+                    flush=True
+                )
+                if billing.is_success:
+                    content = billing.json()
+                    bills = content.get("data") if isinstance(content, dict) else None
+                    if isinstance(bills, list):
+                        print(
+                            "ZeroGPT diagnostic: billing items=" +
+                            str(len(bills)), flush=True
+                        )
+                    elif isinstance(bills, dict):
+                        print(
+                            "ZeroGPT diagnostic: billing fields=" +
+                            ",".join(sorted(str(k) for k in bills.keys())),
+                            flush=True
+                        )
+            except (httpx.HTTPError, ValueError):
+                print("ZeroGPT diagnostic: billing-history unavailable", flush=True)
 
             # A fixed public technical sample; only used for an explicitly enabled
             # one-time integration test, never a user's editorial draft.
