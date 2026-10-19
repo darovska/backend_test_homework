@@ -153,3 +153,68 @@ async def mcp(request: Request):
 @app.get("/mcp")
 async def mcp_get():
     return Response(status_code=405, headers={"Allow": "POST"})
+
+
+# Safe, one-time diagnostic of API-key-only access (read-only requests).
+# Activation requires ZEROGPT_DIAG_PROBE=1. No text is sent, and no usage is billed.
+@app.on_event("startup")
+async def read_only_api_probe():
+    if os.environ.get("ZEROGPT_DIAG_PROBE") != "1":
+        return
+    import asyncio
+    import ipaddress
+
+    async def check():
+        key = os.environ.get("ZEROGPT_API_KEY", "")
+        print("ZeroGPT diagnostic: API key present=" + str(bool(key)), flush=True)
+        async with httpx.AsyncClient(timeout=15, follow_redirects=False) as client:
+            try:
+                ip_response = await client.get("https://api.ipify.org?format=json")
+                value = ip_response.json().get("ip") if ip_response.is_success else None
+                try:
+                    safe_ip = str(ipaddress.ip_address(value))
+                except (ValueError, TypeError):
+                    safe_ip = "unavailable"
+                print("ZeroGPT diagnostic: actual Render IPv4 egress=" + safe_ip, flush=True)
+            except (httpx.HTTPError, ValueError):
+                print("ZeroGPT diagnostic: egress IP lookup unavailable", flush=True)
+            if not key:
+                return
+            for method, headers in (
+                ("ApiKey", {"ApiKey": key}),
+                ("BearerApiKey", {"Authorization": "Bearer " + key}),
+            ):
+                try:
+                    response = await client.get(
+                        PROVIDER_URL + "/api/dashboard/myStats",
+                        headers=headers,
+                    )
+                    try:
+                        body = response.json()
+                    except ValueError:
+                        body = None
+                    is_success = (
+                        response.is_success and
+                        isinstance(body, dict) and
+                        body.get("success") is True
+                    )
+                    print(
+                        "ZeroGPT diagnostic: method=" + method +
+                        " HTTP=" + str(response.status_code) +
+                        " success=" + str(is_success),
+                        flush=True,
+                    )
+                    if is_success:
+                        data = body.get("data")
+                        if isinstance(data, dict):
+                            for field, val in data.items():
+                                if "balance" in field.lower() or "credit" in field.lower():
+                                    if isinstance(val, (int, float)) and not isinstance(val, bool):
+                                        print(
+                                            "ZeroGPT diagnostic: account " + field +
+                                            "=" + str(val), flush=True
+                                        )
+                except httpx.HTTPError:
+                    print("ZeroGPT diagnostic: method=" + method + " network failure", flush=True)
+
+    asyncio.create_task(check())
