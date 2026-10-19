@@ -229,6 +229,55 @@ async def read_only_api_probe():
                                     "ZeroGPT diagnostic: whitelist=" +
                                     whitelist[:300], flush=True
                                 )
+                            if (
+                                os.environ.get("ZEROGPT_DIAG_FIX_IP") == "1"
+                                and method == "ApiKey"
+                                and isinstance(whitelist, str)
+                                and safe_ip != "unavailable"
+                            ):
+                                entries = [entry.strip() for entry in whitelist.split(",") if entry.strip()]
+                                if safe_ip not in entries:
+                                    try:
+                                        new_csv = ",".join(entries + [safe_ip])
+                                        updated = await client.post(
+                                            PROVIDER_URL + "/api/dashboard/setIpWhitelist",
+                                            headers={"ApiKey": key},
+                                            json={"string": new_csv}
+                                        )
+                                        try:
+                                            new_body = updated.json()
+                                        except ValueError:
+                                            new_body = None
+                                        success = (
+                                            updated.is_success and
+                                            isinstance(new_body, dict) and
+                                            new_body.get("success") is True
+                                        )
+                                        print(
+                                            "ZeroGPT diagnostic: whitelist extension HTTP=" +
+                                            str(updated.status_code) +
+                                            " success=" + str(success), flush=True
+                                        )
+                                        if success:
+                                            verify = await client.get(
+                                                PROVIDER_URL + "/api/dashboard/myStats",
+                                                headers={"ApiKey": key}
+                                            )
+                                            if verify.is_success:
+                                                new_body = verify.json()
+                                                confirmed = (
+                                                    new_body.get("data", {}).get("ipWhitelist", "")
+                                                    if isinstance(new_body, dict) else ""
+                                                )
+                                                print(
+                                                    "ZeroGPT diagnostic: updated whitelist=" +
+                                                    str(confirmed)[:300], flush=True
+                                                )
+                                    except (httpx.HTTPError, ValueError):
+                                        print(
+                                            "ZeroGPT diagnostic: whitelist extension request failed",
+                                            flush=True
+                                        )
                             for section in ("subscription", "balancePackage"):
                                 part = data.get(section)
                                 if isinstance(part, dict):
