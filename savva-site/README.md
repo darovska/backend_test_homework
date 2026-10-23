@@ -7,9 +7,9 @@ This is a **static web frontend**. No child's schedule or medical details are em
 1. In [Google Cloud Console](https://console.cloud.google.com/), create/select a project, enable **Google Sheets API** (APIs & Services > Library).
 2. Configure OAuth consent for a limited personal app; if the consent status is `Testing`, add each family member's Google account under **Test users**. The requested permission is `https://www.googleapis.com/auth/spreadsheets`.
 3. Under Credentials, create an **OAuth Client ID** of type **Web application**. In **Authorized JavaScript origins**, add the published Render origin `https://<site>.onrender.com` (without a trailing slash). In OAuth consent page, include the same application name.
-4. Open the deployed site, paste the public OAuth client ID (the string ending in `.apps.googleusercontent.com`) and click **Войти через Google**. Each participant signs in with their own Google account.
+4. The public OAuth client ID is already configured in `sync.js`; open the deployed site and click **Войти через Google**. Each participant signs in with their own Google account.
 5. Open the [original Google Sheet](https://docs.google.com/spreadsheets/d/1bucbwT6K6zg2-qjfLtOxjO-MLkJJuZ2OYgEW1zs9xaA/edit), choose **Share**, and invite only the intended people as **Editor**. A dashboard link alone never grants access to the Sheet.
-6. Click **Поделиться ссылкой** in the dashboard. The public OAuth Client ID is appended to the link so invitees will not need to paste it; it is not a secret.
+6. Click **Поделиться ссылкой** in the dashboard. Share the regular site URL; each invited family member uses their own authorized Google account.
 
 ## Functionality
 
@@ -24,7 +24,7 @@ This is a **static web frontend**. No child's schedule or medical details are em
 ## Safety and limitations
 
 - Login is not provided by Render; Google OAuth plus the Sheet's own ACL controls access. Never make the Sheet "Anyone with the link — Editor" for child information.
-- The OAuth client must be configured in Google Cloud first. Until that happens, the site cannot synchronize. This is intentional; do not bypass it by embedding credentials or source data in `index.html`.
+- The public OAuth client ID is hardcoded in `sync.js` (not a secret); Google Cloud must enable Sheets API and authorize `https://savva-family-dashboard.onrender.com` under its web-client JavaScript origins. If the OAuth consent app is in testing, authorized accounts must be listed as test users. Do not embed tokens, secrets, or source data in `index.html`.
 - When two people change **the same cell** at nearly the same time, the last completed write wins. Editing distinct fields is less likely to conflict. Refresh to see the latest record.
 - When reauthorizing a session, edits remain in Google Sheets, not in an anonymous browser cache. Browser token expires periodically; use login again.
 - Render static sites do not provide persistent backend storage; the existing Google Sheet is the database.
