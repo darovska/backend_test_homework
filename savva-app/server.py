@@ -232,8 +232,15 @@ def script():
 
 @app.get("/api/health")
 def health():
-    configured = bool(os.environ.get("DATABASE_URL"))
-    return {"ok": True, "database_connected": configured, "service": "savva-family"}
+    # Report verified connectivity rather than only the presence of DATABASE_URL.
+    # No private timetable data or credentials are returned to unauthenticated callers.
+    try:
+        with connect() as con:
+            con.execute("SELECT 1")
+        available = True
+    except Exception:
+        available = False
+    return {"ok": True, "database_connected": available, "service": "savva-family"}
 
 
 @app.post("/api/login")
