@@ -6,6 +6,8 @@
   'use strict';
   const SHEET_ID='1bucbwT6K6zg2-qjfLtOxjO-MLkJJuZ2OYgEW1zs9xaA';
   const BASE=`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}`;
+  // Public OAuth client identifier (not a secret); Google Sheets data remains private.
+  const DEFAULT_CLIENT_ID='991225632251-9urfipk29956tjhc2cgatcrmp735kfee.apps.googleusercontent.com';
   const MONTHS=['Октябрь 2026','Ноябрь 2026','Декабрь 2026','Январь 2027','Февраль 2027','Март 2027','Апрель 2027','Май 2027','Июнь 2027','Июль 2027','Август 2027','Сентябрь 2027'];
   const NOTE_SHEET='Веб_дневник';
   let app=null, accessToken='', tokenClient=null, lastSaved=null, saveTimer=null, writing=false, dirty=false;
@@ -20,7 +22,7 @@
   function notify(msg,error=false){const el=$('storageStatus');if(el){el.textContent=msg;el.style.background=error?'#fff0ed':'#ecf4f5';el.style.color=error?'#9e3645':'#26666b';} if(error){const a=$('authMessage');if(a&&!$('authGate').classList.contains('hidden'))a.textContent=msg;}}
   function showGate(msg){$('authGate').classList.remove('hidden');if(msg)$('authMessage').textContent=msg;}
   function isConnected(){return !!accessToken&&!!lastSaved;}
-  function clientId(){const u=new URLSearchParams(location.search).get('client_id');let saved='';try{saved=localStorage.getItem('savva_google_client_id')||'';}catch{}return (u||saved||'').trim();}
+  function clientId(){return DEFAULT_CLIENT_ID;}
   async function api(path,options={}){
     if(!accessToken)throw Error('Сначала войди в Google');
     let resp;
@@ -180,9 +182,9 @@
   function init(loginApp){app=loginApp;configuredClient=clientId();$('oauthClient').value=configuredClient;
     const conn=$('authConnect'),msg=$('authMessage');
     conn.addEventListener('click',async()=>{
-      configuredClient=$('oauthClient').value.trim();
+      configuredClient=DEFAULT_CLIENT_ID;
       if(!/^[0-9A-Za-z_-]+\.apps\.googleusercontent\.com$/.test(configuredClient)){msg.textContent='Нужен действительный OAuth Client ID веб-приложения Google.';return;}
-      try{localStorage.setItem('savva_google_client_id',configuredClient);}catch{}
+      // The registered client is fixed for this deployment; nothing to configure locally.
       if(!global.google?.accounts?.oauth2){msg.textContent='Сервис входа Google еще не загрузился. Обнови страницу и попробуй снова.';return;}
       msg.textContent='Подключение к Google…';
       tokenClient=global.google.accounts.oauth2.initTokenClient({client_id:configuredClient,scope:'https://www.googleapis.com/auth/spreadsheets',callback:async response=>{
@@ -203,7 +205,7 @@
     setInterval(()=>{if(isConnected()&&!dirty&&!writing&&document.visibilityState==='visible')refresh().catch(()=>{});},60000);
   }
   async function share(){
-    const cid=configuredClient||clientId();const u=new URL(location.href);u.searchParams.set('client_id',cid);u.hash='';
+    const u=new URL(location.origin+location.pathname);
     try{await navigator.clipboard.writeText(u.toString());alert('Ссылка скопирована. Другому человеку также нужно выдать доступ к Google-таблице через кнопку «Поделиться» в Google Sheets.');}
     catch{prompt('Скопируй ссылку. Не забудь открыть доступ к исходной таблице:',u.toString());}
   }
