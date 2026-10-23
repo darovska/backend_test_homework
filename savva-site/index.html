@@ -45,10 +45,10 @@
     <div class="auth-eyebrow">СЕМЕЙНЫЙ ДАШБОРД</div>
     <h2>Общий дневник занятий</h2>
     <p>После входа ты увидишь занятия из общей Google-таблицы. Изменения минут, посещений и примечаний будут доступны другим участникам с правом редактирования.</p>
-    <label>Google OAuth Client ID <input id="oauthClient" type="text" placeholder="123456789-...apps.googleusercontent.com" autocomplete="off"></label>
-    <div class="auth-actions"><button id="authConnect" class="btn-primary">Войти через Google</button><a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener noreferrer">Где получить Client ID</a></div>
+    <input id="oauthClient" type="hidden" autocomplete="off">
+    <div class="auth-actions"><button id="authConnect" class="btn-primary">Войти через Google</button><a href="https://docs.google.com/spreadsheets/d/1bucbwT6K6zg2-qjfLtOxjO-MLkJJuZ2OYgEW1zs9xaA/edit" target="_blank" rel="noopener noreferrer">Открыть Google-таблицу</a></div>
     <p id="authMessage" class="auth-message" role="status"></p>
-    <details><summary>Как подключить один раз</summary><ol><li>В Google Cloud создай OAuth Client ID типа Web application и включи Google Sheets API.</li><li>В Authorized JavaScript origins добавь адрес этого сайта на Render, без завершающего слеша.</li><li>В OAuth consent screen добавь участников как Test users, если приложение в режиме Testing.</li><li>Убедись, что у каждого участника есть доступ к исходной Google-таблице. Этот сайт не обходит ее права.</li><li>Вставь Client ID и войди. Кнопка «Поделиться» сформирует адрес с Client ID для семьи.</li></ol></details>
+    <details><summary>Не получается войти?</summary><ol><li>Войди тем Google-аккаунтом, которому выдан доступ к исходной таблице.</li><li>Владелец должен включить Google Sheets API и разрешить сайт https://savva-family-dashboard.onrender.com в OAuth-клиенте Google Cloud.</li><li>Если OAuth-приложение в режиме Testing, владелец должен добавить нужные адреса в список тестовых пользователей.</li><li>Кнопка «Поделиться» копирует ссылку на дашборд; право редактирования таблицы выдается отдельно в Google Sheets.</li></ol></details>
     <small>Данные ребенка не опубликованы в коде сайта. Сохранение происходит в Google Sheets с разрешения авторизованного пользователя.</small>
   </div>
 </div>
