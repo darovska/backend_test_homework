@@ -36,7 +36,7 @@ async function refresh(force=false){
  }
  if(!r.data?.months)throw Error('База не вернула расписание');
  app.setCloudData(r.data);lastSaved=clone(r.data);dirty=false;conflict=false;connected=true;
- $('authGate').classList.add('hidden');alertStatus('✓ Данные синхронизированы');
+ $('authGate').classList.add('hidden');alertStatus('✓ Данные дашборда загружены');
 }
 async function flush(){
  if(!connected||!lastSaved||!app||writing||conflict)return;
