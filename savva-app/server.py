@@ -232,15 +232,35 @@ def script():
 
 @app.get("/api/health")
 def health():
-    # Report verified connectivity rather than only the presence of DATABASE_URL.
-    # No private timetable data or credentials are returned to unauthenticated callers.
+    """Safe diagnostics: never echo database hosts, usernames, URLs or passwords."""
+    value = os.environ.get("DATABASE_URL", "").strip()
+    if not value:
+        return {"ok": True, "database_connected": False, "database_status": "database_url_missing", "service": "savva-family"}
+    if not value.startswith(("postgresql://", "postgres://")):
+        return {"ok": True, "database_connected": False, "database_status": "database_url_invalid", "service": "savva-family"}
     try:
         with connect() as con:
             con.execute("SELECT 1")
-        available = True
+        status = "connected"
+    except psycopg.OperationalError as exc:
+        message = str(exc).lower()
+        if "password authentication failed" in message or "no password supplied" in message:
+            status = "credentials_rejected"
+        elif "could not translate host name" in message or "name or service not known" in message or "name resolution" in message:
+            status = "host_not_found"
+        elif "connection refused" in message:
+            status = "connection_refused"
+        elif "timeout" in message or "timed out" in message:
+            status = "connection_timeout"
+        elif "ssl" in message or "tls" in message:
+            status = "tls_error"
+        elif "does not exist" in message:
+            status = "database_not_found"
+        else:
+            status = "connection_error"
     except Exception:
-        available = False
-    return {"ok": True, "database_connected": available, "service": "savva-family"}
+        status = "connection_error"
+    return {"ok": True, "database_connected": status == "connected", "database_status": status, "service": "savva-family"}
 
 
 @app.post("/api/login")
