@@ -633,6 +633,636 @@
         "URL новых материалов — предложенные, такие страницы на anonhaven.com пока не существуют.",
         "Данные статичны на момент проверки; это не живая лента."
       ]
+    },
+    {
+      "date": "2026-10-28",
+      "checkedAt": "28 октября 2026, утренняя проверка (Europe/Minsk)",
+      "briefs": [
+        {
+          "slug": "firstvds-vmmanager-2026-10",
+          "eventId": "firstvds-vmmanager-incident-2026-10-17",
+          "score": 96,
+          "kind": "Новости",
+          "format": "Разбор инцидента",
+          "category": "Инциденты",
+          "status": "К подготовке; повторно проверить CMS перед созданием",
+          "urgency": "Сегодня",
+          "h1": "FirstVDS раскрыла, как атакующие читали диски серверов",
+          "angle": "FirstVDS и ISPsystem 27 октября раскрыли постмортем атаки 17 октября: сборщик работал на узлах виртуализации. Объяснить границы подтвержденной компрометации и действия клиентов, без выдуманного объема эксфильтрации.",
+          "timeline": [
+            "12.10 — первые следы проникновения у ряда пользователей VMmanager, по версии ISPsystem",
+            "17.10 — FirstVDS обнаружила атаку",
+            "27.10 — опубликованы два технических разбора"
+          ],
+          "primary": [
+            {
+              "label": "FirstVDS, постмортем 27 октября",
+              "url": "https://firstvds.ru/blog/postmortem-ataka-na-firstvds-17102026"
+            },
+            {
+              "label": "ISPsystem, постмортем 27 октября",
+              "url": "https://www.ispsystem.ru/news/post-mortem"
+            }
+          ],
+          "coverage": [],
+          "facts": [
+            "FirstVDS сообщает об административном доступе к VMmanager и сборщике, который подключал диски ВМ на гипервизорах для чтения.",
+            "Архивы найденного сборщика на 457 узлах имели общий объем 117,24 ГиБ, этот показатель не подтверждает объем передачи наружу.",
+            "ISPsystem описывает HTTP Request Smuggling и исправления в продуктах; расследование затронуло несколько хостеров.",
+            "Роль специализированных ИИ-инструментов заявлена ISPsystem, независимый технический разбор модели не представлен."
+          ],
+          "notConfirmed": [
+            "457 — не подтвержденное число жертв или VDS.",
+            "117,24 ГиБ — не доказанный объем похищенных файлов.",
+            "Нельзя считать все хостеры с VMmanager скомпрометированными."
+          ],
+          "seoTitle": "Взлом FirstVDS и VMmanager: хронология, данные, патчи",
+          "seoDescription": "FirstVDS и ISPsystem описали атаку на VMmanager 6. Что известно о доступе к файлам ВМ, отчетах на 457 узлах и необходимых действиях клиентов.",
+          "mainKeyword": "FirstVDS взлом VMmanager",
+          "extraKeywords": [
+            "FirstVDS инцидент октябрь 2026",
+            "VMmanager 6 атака",
+            "HTTP Request Smuggling VMmanager",
+            "FirstVDS утечка файлов",
+            "ISPsystem постмортем"
+          ],
+          "proposedUrl": "/news/firstvds-vmmanager-vzlom-2026/",
+          "h2": [
+            "Что произошло на серверах FirstVDS",
+            "Как злоумышленник получил доступ к VMmanager",
+            "Какие данные собирали с дисков ВМ",
+            "Что доказывают архивы на 457 узлах",
+            "Какие исправления выпустила ISPsystem",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Сколько данных утекло при взломе FirstVDS в октябре 2026 года?",
+          "aiAnswer": "FirstVDS 27 октября сообщила о найденных архивах сборщика на 457 узлах виртуализации общим объемом 117,24 ГиБ. Это не подтвержденный объем передачи данных злоумышленнику и не число клиентов. Программа могла читать файлы виртуальных машин через гипервизоры, а разработчик VMmanager раскрыл использованные векторы и последующие исправления.",
+          "entities": [
+            "FirstVDS",
+            "ISPsystem",
+            "VMmanager 6 Hosting",
+            "гипервизор",
+            "HTTP Request Smuggling"
+          ],
+          "contribution": "Хронология 12–27 октября, различие между виртуальными узлами, клиентами и объемом архива.",
+          "faq": [
+            {
+              "q": "Сколько клиентов пострадало?",
+              "a": "Число публично не подтверждено; 457 — узлы с архивами сборщика."
+            },
+            {
+              "q": "Украдены ли все 117,24 ГиБ?",
+              "a": "Размер обнаруженных архивов не равен доказанному объему передачи наружу."
+            },
+            {
+              "q": "Нужно ли менять ключи?",
+              "a": "FirstVDS рекомендует затронутым клиентам сменить пароли, токены и SSH-ключи."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/docker-hub-dva-goda-pozvolyal-vydavat-sebya-za-drugogo-polzovatelya/",
+            "https://anonhaven.com/kak-zloumyshlenniki-vzlamyvayut-paroli-i-chto-s-etim-delat/"
+          ],
+          "illustration": "Оригинальный горизонтальный JPEG из редакционной подборки 28.10",
+          "alt": "Серверная и узел виртуализации со скомпрометированным доступом",
+          "preparedDocs": "https://docs.google.com/document/d/1n0MNMnCHXxzbKizCSiIYIHxpPjQqpQupeCPurpMciAU/edit",
+          "scoreLabel": "Редакционный приоритет, не SEO-метрика",
+          "targetLength": "3500–5500 знаков",
+          "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+        },
+        {
+          "slug": "yoba-fake-ai-installers",
+          "eventId": "checkpoint-yoba-fake-ai-installers-2026-10-27",
+          "score": 94,
+          "kind": "Новости",
+          "format": "Срочная новость",
+          "category": "Угрозы",
+          "status": "К подготовке; новый инфоповод",
+          "urgency": "Сегодня",
+          "h1": "Поддельные ChatGPT и Claude заражали компьютеры через GitHub",
+          "angle": "Исследование Check Point 27 октября: Yoba распространялся под видом десктопных приложений с помощью настоящих подписанных установщиков и подменной DLL.",
+          "timeline": [
+            "Последние два месяца до 27.10 — наблюдавшаяся кампания по данным Check Point",
+            "27.10 — опубликовано техническое исследование"
+          ],
+          "primary": [
+            {
+              "label": "Check Point Research, Yoba",
+              "url": "https://research.checkpoint.com/2026/tricks-from-the-past-deployed-via-signed-chatgpt-and-claude-binaries/"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "CybersecurityNews, 27 октября",
+              "url": "https://cybersecuritynews.com/fake-github-chatgpt-claude-malware/"
+            }
+          ],
+          "facts": [
+            "Атакующие публиковали фальшивые проекты GPT-5.6 Sol, GPT-6 Astra и Claude Opus на GitHub и GitHub Pages.",
+            "Злоумышленники размещали вредоносную DLL рядом с подлинными подписанными исполняемыми файлами OpenAI или Anthropic: DLL sideloading.",
+            "В цепочке задействованы YobaDropper, YobaLoader и загрузка последующей вредоносной нагрузки.",
+            "Утверждения об операторах с русскоязычными признаками — оценка исследователей, не идентификация."
+          ],
+          "notConfirmed": [
+            "Все пользователи ChatGPT или Claude затронуты.",
+            "Подписанные оригинальные приложения компаний скомпрометированы.",
+            "Установлены реальные личности и страна участников."
+          ],
+          "seoTitle": "Yoba: фейковые ChatGPT и Claude в GitHub разносили вирусы",
+          "seoDescription": "Check Point раскрыла Yoba: вредоносные установщики под видом ChatGPT и Claude на GitHub использовали настоящие подписанные файлы для запуска DLL.",
+          "mainKeyword": "Yoba фейковые ChatGPT Claude",
+          "extraKeywords": [
+            "вредоносные ChatGPT installers",
+            "поддельный GPT-6 Astra GitHub",
+            "YobaDropper",
+            "DLL sideloading AI",
+            "фейковый Claude Opus"
+          ],
+          "proposedUrl": "/news/yoba-fejkovye-chatgpt-claude-github/",
+          "h2": [
+            "Как поддельные ИИ-приложения попадали в поиск",
+            "Зачем атакующим подлинная цифровая подпись",
+            "Как работали YobaDropper и YobaLoader",
+            "Какие последствия подтверждены",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Можно ли заразиться через скачанный с GitHub ChatGPT или Claude?",
+          "aiAnswer": "27 октября Check Point описала кампанию Yoba. В поддельных проектах на GitHub распространялись архивы с настоящим подписанным установщиком и вредоносной DLL. Если пользователь запускал такой комплект, программа могла загрузить вредоносную нагрузку. Исследование не свидетельствует о компрометации официальных приложений OpenAI и Anthropic; речь об имитации и подмене рядом расположенных файлов.",
+          "entities": [
+            "Check Point Research",
+            "GitHub",
+            "ChatGPT",
+            "Claude",
+            "DLL sideloading",
+            "YobaDropper"
+          ],
+          "contribution": "Объяснить разницу между настоящей подписью бинарника и доверием к архиву как целому.",
+          "faq": [
+            {
+              "q": "Официальные приложения ChatGPT и Claude взломали?",
+              "a": "Нет, исследователи описали поддельные сборки, использующие настоящие подписанные файлы."
+            },
+            {
+              "q": "Почему опасен GitHub?",
+              "a": "Злоумышленники разместили там ложные релизы, выдавая их за ПО компаний."
+            },
+            {
+              "q": "Что делал Yoba?",
+              "a": "Загружал и запускал постороннюю нагрузку; в исследовании показана цепочка вредоносных компонентов."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/vredonosnyj-agentsmd-zastavlyal-codex-vypolnyat-chuzhie-komandy/",
+            "https://anonhaven.com/news/v-opencode-vzlomali-oblachnuyu-console-s-api-klyuchami-ii/"
+          ],
+          "illustration": "Горизонтальная ИИ-иллюстрация: подлинный цифровой сертификат поверх поддельного установщика, без брендов",
+          "alt": "Поддельный архив установки ИИ-приложения загружает посторонний компонент",
+          "scoreLabel": "Редакционный приоритет, не SEO-метрика",
+          "targetLength": "3500–5500 знаков",
+          "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+        },
+        {
+          "slug": "warp-agent-logs-vendor",
+          "eventId": "warp-agent-telemetry-vendor-2026-10-23",
+          "score": 90,
+          "kind": "Новости",
+          "format": "Новость",
+          "category": "Инциденты",
+          "status": "В редакционной подборке 28.10; полная статья не подтверждена",
+          "urgency": "Сегодня",
+          "h1": "Warp сообщила о доступе к журналам ИИ-агентов",
+          "angle": "У провайдера Warp возможная компрометация журналов действий агентов и телеметрии. Данные о точном наборе полей и масштабе в стадии расследования.",
+          "timeline": [
+            "23.10 — подозрительная активность, по утверждению руководителя",
+            "26.10 — заявление руководителя",
+            "27.10 — публикация BleepingComputer"
+          ],
+          "primary": [
+            {
+              "label": "Заявление руководителя Warp, ссылка приведена BleepingComputer",
+              "url": "https://x.com/zachlloydtweets/status/2114800787716972873"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "BleepingComputer, 27 октября",
+              "url": "https://www.bleepingcomputer.com/news/security/warp-discloses-breach-exposing-ai-agent-logs-user-telemetry-data/"
+            }
+          ],
+          "facts": [
+            "Warp сообщила о возможном доступе к журналам решений агентов и телеметрии через стороннего поставщика.",
+            "CEO оценивает долю потенциально затронутых пользователей примерно в 1%; оценка предварительная.",
+            "Компания заявила об уведомлениях и привлечении CrowdStrike."
+          ],
+          "notConfirmed": [
+            "Наличие в доступных записях всех промптов, исходников и API-ключей.",
+            "Окончательное число пострадавших пользователей.",
+            "Метод взлома и автоматизированная роль агентов подтверждены независимыми артефактами."
+          ],
+          "seoTitle": "Warp: инцидент с журналами ИИ-агентов и телеметрией",
+          "seoDescription": "Warp расследует возможный доступ к журналам ИИ-агентов через подрядчика. Что означает предварительная оценка затронутых пользователей и что неизвестно.",
+          "mainKeyword": "Warp утечка журналов агентов",
+          "extraKeywords": [
+            "Warp 2026 breach",
+            "Warp agent traces",
+            "ИИ агенты телеметрия",
+            "записи ИИ агента",
+            "утечка журналов ИИ"
+          ],
+          "proposedUrl": "/news/warp-agent-logs-incident-2026/",
+          "h2": [
+            "Что сообщил руководитель Warp",
+            "Какие журналы оказались под риском",
+            "Как оценен масштаб инцидента",
+            "Какие данные еще не подтверждены",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Утекли ли промпты и ключи пользователей Warp?",
+          "aiAnswer": "Warp объявила о подозрительной активности у одного из инфраструктурных поставщиков и возможном доступе к журналам действий ИИ-агентов и телеметрии. Оценка затронутых пользователей пока предварительная — около 1%. Компания не раскрыла точное содержимое затронутых журналов, поэтому вывод об утечке API-ключей или исходного кода не подтвержден.",
+          "entities": [
+            "Warp",
+            "agent traces",
+            "telemetry",
+            "CrowdStrike"
+          ],
+          "contribution": "Различие между журналом решений агента, исходным кодом и секретами; границы данных, ставших доступными.",
+          "faq": [
+            {
+              "q": "Сколько пользователей затронуто?",
+              "a": "Руководитель назвал предварительную оценку около 1%."
+            },
+            {
+              "q": "Утекли ли API-ключи?",
+              "a": "Состав данных пока не раскрыт."
+            },
+            {
+              "q": "Проблема уже исправлена?",
+              "a": "Warp сообщила о принятых мерах; расследование не завершено."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/ii-agenty-openai-otklyuchali-monitoring-sobstvennyh-dejstvij/",
+            "https://anonhaven.com/news/vredonosnyj-agentsmd-zastavlyal-codex-vypolnyat-chuzhie-komandy/"
+          ],
+          "illustration": "Готовый редакционный JPEG от 28.10",
+          "alt": "Голографические журналы ИИ-агентов и облачная инфраструктура",
+          "preparedDocs": "https://docs.google.com/document/d/1n0MNMnCHXxzbKizCSiIYIHxpPjQqpQupeCPurpMciAU/edit",
+          "scoreLabel": "Редакционный приоритет, не SEO-метрика",
+          "targetLength": "3500–5500 знаков",
+          "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+        },
+        {
+          "slug": "php2shell-cisa-kev",
+          "eventId": "php2shell-cve-2026-109618-109619-2026-10-21",
+          "score": 89,
+          "kind": "Новости",
+          "format": "Обновление существующего URL",
+          "category": "Угрозы",
+          "status": "UPDATE: две существующие публикации 22.10; третью не создавать",
+          "urgency": "Сегодня",
+          "h1": "CISA подтвердила эксплуатацию PHP2Shell и установила срок обновления",
+          "angle": "Обновить существующий разбор AnonHaven: 26 октября CISA добавила CVE-2026-109618 и CVE-2026-109619 в KEV, срок для федеральных ведомств США 29 октября. Не подменять подтверждение эксплуатации данными о количестве жертв.",
+          "timeline": [
+            "21.10 — официальные исправления PHP",
+            "22.10 — две публикации AnonHaven",
+            "26.10 — включение обеих CVE в CISA KEV",
+            "27.10 — освещение BleepingComputer"
+          ],
+          "primary": [
+            {
+              "label": "CISA KEV, официальный каталог (HTTP 403 при текущей проверке)",
+              "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"
+            },
+            {
+              "label": "PHP, официальные исправления",
+              "url": "https://www.php.net/archive/2026.php#2026-10-21-5"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "BleepingComputer 27 октября",
+              "url": "https://www.bleepingcomputer.com/news/security/cisa-confirms-php2shell-vulnerabilities-now-exploited-in-attacks/"
+            }
+          ],
+          "facts": [
+            "Профильные публикации сообщают о включении двух PHP CVE в KEV 26 октября и сроке 29 октября для федеральных ведомств США.",
+            "Исправления выпущены 21 октября: PHP 8.2.35, 8.3.36, 8.4.27, 8.5.12.",
+            "AnonHaven уже имеет два публичных материала об этом событии от 22 октября."
+          ],
+          "notConfirmed": [
+            "Конкретные массово взломанные организации на основании только каталога KEV.",
+            "Все конфигурации PHP одинаково доступны для атаки.",
+            "Исполнение команды CISA адресовано всем сайтам в мире."
+          ],
+          "seoTitle": "PHP2Shell: CISA подтвердила атаки, срок патчей 29 октября",
+          "seoDescription": "CISA включила две PHP2Shell CVE в список эксплуатируемых. Что изменилось после патчей 21 октября и почему нужно обновить существующий разбор.",
+          "mainKeyword": "PHP2Shell CISA KEV",
+          "extraKeywords": [
+            "CVE-2026-109618",
+            "CVE-2026-109619",
+            "PHP 8.5.12",
+            "эксплуатация PHP2Shell",
+            "CISA срок 29 октября"
+          ],
+          "proposedUrl": "https://anonhaven.com/news/php2shell-v-germanii-otklyuchali-sajty-patchi-uzhe-vyshli/",
+          "h2": [
+            "Что CISA подтвердила 26 октября",
+            "Какой срок установлен федеральным ведомствам",
+            "Какие версии PHP исправлены",
+            "Что известно о реальных атаках",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Что означает включение PHP2Shell в каталог CISA KEV?",
+          "aiAnswer": "CISA внесла две уязвимости PHP2Shell в каталог известных эксплуатируемых проблем. Это означает наличие подтвержденных признаков эксплуатации, но не публикует число взломанных серверов. Федеральным ведомствам США установлен срок исправления до 29 октября 2026 года. В поддерживаемых ветках PHP исправления вышли 21 октября, обновление должно затронуть реально работающие серверные процессы.",
+          "entities": [
+            "CISA",
+            "PHP",
+            "KEV",
+            "CVE-2026-109618",
+            "CVE-2026-109619"
+          ],
+          "contribution": "Дата подтверждения эксплуатации отдельно от даты патча и даты публикации СМИ.",
+          "faq": [
+            {
+              "q": "Уязвимости реально эксплуатируют?",
+              "a": "Включение в KEV означает, что CISA считает эксплуатацию подтвержденной."
+            },
+            {
+              "q": "Когда вышли патчи?",
+              "a": "21 октября для PHP 8.2–8.5."
+            },
+            {
+              "q": "Что означает 29 октября?",
+              "a": "Срок исправления по обязательным правилам для соответствующих федеральных ведомств США."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/php2shell-iz-za-kriticheskih-uyazvimostej-otklyuchayut-sajty/",
+            "https://anonhaven.com/news/nkcki-potreboval-obnovit-php-na-obektah-kii/"
+          ],
+          "illustration": "Переиспользовать существующую обложку выбранного URL",
+          "alt": "Исправления PHP и подтверждение активной эксплуатации двух CVE",
+          "scoreLabel": "Редакционный приоритет, не SEO-метрика",
+          "targetLength": "3500–5500 знаков",
+          "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+        },
+        {
+          "slug": "goahead-tls-bugs-2026-10-26",
+          "eventId": "goahead-tls-3-bugs-2026-10-26",
+          "score": 86,
+          "kind": "Новости",
+          "format": "Техническая новость",
+          "category": "Угрозы",
+          "status": "В редакционной подборке 28.10, статья CMS не подтверждена",
+          "urgency": "24–48 часов",
+          "h1": "В GoAhead нашли три ошибки проверки TLS",
+          "angle": "Разделить дефекты трех TLS-бэкендов и конкретные конфигурации: отзыв сертификата, цепочка и параметры Diffie-Hellman.",
+          "timeline": [
+            "02.08 — исправление 6.1.1 передано вендорам, по FoxIO",
+            "12.10 — публичный релиз 6.1.1, по FoxIO",
+            "26.10 — раскрыто исследование"
+          ],
+          "primary": [
+            {
+              "label": "FoxIO 26 октября",
+              "url": "https://foxio.io/blog/choose-your-backend-three-tls-bugs-in-goahead"
+            }
+          ],
+          "coverage": [
+            {
+              "label": "CybersecurityNews обзор",
+              "url": "https://cybersecuritynews.com/"
+            }
+          ],
+          "facts": [
+            "FoxIO описала три независимые ошибки в разных TLS-сборках GoAhead.",
+            "Одна из них позволяет принять отозванный клиентский сертификат при включенном mTLS+CRL на OpenSSL-совместимом бэкенде (CVSS 9.1 в оценке FoxIO).",
+            "Mbed TLS и LibreSSL затрагиваются другими условиями и рисками.",
+            "Исправлено в GoAhead 6.1.1, но конечные устройства зависят от обновлений производителей."
+          ],
+          "notConfirmed": [
+            "Все устройства с GoAhead одинаково уязвимы.",
+            "Есть доказанная массовая эксплуатация.",
+            "Оценка установок GoAhead — число пострадавших устройств."
+          ],
+          "seoTitle": "GoAhead: три ошибки TLS в роутерах и камерах",
+          "seoDescription": "FoxIO описала три ошибки TLS в GoAhead: отозванные сертификаты, цепочки и ключи. Исправление 6.1.1, но реальный риск зависит от сборки.",
+          "mainKeyword": "GoAhead TLS уязвимости",
+          "extraKeywords": [
+            "GoAhead 6.1.1",
+            "GOAHEAD-SA-2026-0006",
+            "OpenSSL mTLS CRL",
+            "GoAhead MbedTLS",
+            "GoAhead LibreSSL"
+          ],
+          "proposedUrl": "/news/goahead-tls-3-uyazvimosti-2026/",
+          "h2": [
+            "Где используется GoAhead",
+            "Как переставала работать проверка отзыва",
+            "Что случилось с Mbed TLS и LibreSSL",
+            "Почему важна сборка конкретной прошивки",
+            "Вопросы и ответы (FAQ)"
+          ],
+          "aiQuestion": "Все ли устройства с GoAhead уязвимы из-за трех ошибок TLS?",
+          "aiAnswer": "Нет. FoxIO 26 октября описала три отдельных ошибки, каждая из которых проявляется в определенном TLS-бэкенде и настройках GoAhead. Ошибки могут повлиять на отзыв клиентских сертификатов, ограничения длины цепочки или обмен ключами. Исправления вошли в GoAhead 6.1.1; установленное на устройстве ПО нужно сверять с бюллетенем производителя.",
+          "entities": [
+            "GoAhead",
+            "FoxIO",
+            "OpenSSL",
+            "LibreSSL",
+            "Mbed TLS"
+          ],
+          "contribution": "Таблица бэкенд — условие — последствия — версия исправления.",
+          "faq": [
+            {
+              "q": "Какая версия исправлена?",
+              "a": "GoAhead 6.1.1 и следующие."
+            },
+            {
+              "q": "Любая камера с GoAhead уязвима?",
+              "a": "Нет, важны TLS-библиотека и настройки."
+            },
+            {
+              "q": "Были массовые атаки?",
+              "a": "В проверенном исследовании не подтверждены."
+            }
+          ],
+          "internalLinks": [
+            "https://anonhaven.com/news/chrome-i-firefox-zablokirovali-slabye-klyuchi-emudhra/",
+            "https://anonhaven.com/cve/"
+          ],
+          "illustration": "Готовый редакционный JPEG от 28.10",
+          "alt": "Сетевой шлюз и серверный сертификат с индикатором ошибки",
+          "preparedDocs": "https://docs.google.com/document/d/1n0MNMnCHXxzbKizCSiIYIHxpPjQqpQupeCPurpMciAU/edit",
+          "scoreLabel": "Редакционный приоритет, не SEO-метрика",
+          "targetLength": "3500–5500 знаков",
+          "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+        }
+      ],
+      "reserve": [
+        {
+          "title": "AGENTS.md — уже опубликовано 28.10 00:50",
+          "eventId": "agents-md-downloads-forever-security-2026-10-22",
+          "note": "Опубликовано на anonhaven.com: не создавать дубль. Можно обновлять только при новой существенной фактуре.",
+          "links": [
+            "https://anonhaven.com/news/vredonosnyj-agentsmd-zastavlyal-codex-vypolnyat-chuzhie-komandy/"
+          ]
+        },
+        {
+          "title": "Барнаул и данные пиццерий — готовый Google Doc, CMS не подтверждена",
+          "eventId": "mvd-barnaul-pizza-data-2026-10",
+          "note": "Первая незавершенная публикационная операция; не создавать второй черновик до проверки CMS.",
+          "links": [
+            "https://docs.google.com/document/d/1AbHRjBQ1TuoyEsFLJ-I1cEbgJ_FwwyavtiOOfh7kHeQ/edit"
+          ]
+        },
+        {
+          "title": "LiteLLM и Railway — подготовлены в прошлых выпусках",
+          "note": "Не создавать второй текст; сначала проверить предыдущие HTML, Google Docs и CMS.",
+          "links": [
+            "https://www.stepsecurity.io/blog/litellm-1-107-0-compromised-pypi-backdoored-wheels-credential-stealer"
+          ]
+        },
+        {
+          "title": "GhostAction / Muse Spark Open / PostgreSQL 19",
+          "note": "Историческая очередь с 19 октября; сохранять, повторно оценивать актуальность.",
+          "links": [
+            "https://www.postgresql.org/about/news/postgresql-19-rc-1-released-3409/"
+          ]
+        },
+        {
+          "title": "CrowdStrike: четыре кампании с Claude Code",
+          "eventId": "crowdstrike-agentic-campaigns-2026-10-21",
+          "note": "Подробный пост уже подготовлен в Google Doc 28 октября, но CMS-статус не подтвержден.",
+          "links": [
+            "https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "name": "StepSecurity",
+          "url": "https://www.stepsecurity.io/blog",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "CNews Safe",
+          "url": "https://safe.cnews.ru/",
+          "type": "Сайт",
+          "status": "Частично"
+        },
+        {
+          "name": "BI.ZONE",
+          "url": "https://bi.zone/news/",
+          "type": "Сайт",
+          "status": "Частично"
+        },
+        {
+          "name": "Check Point Research",
+          "url": "https://research.checkpoint.com/latest-publications/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "The Hacker News",
+          "url": "https://thehackernews.com/",
+          "type": "Сайт",
+          "status": "Частично"
+        },
+        {
+          "name": "SecurityWeek",
+          "url": "https://www.securityweek.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "Kaspersky",
+          "url": "https://www.kaspersky.ru/about/press-releases",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "CyberPress",
+          "url": "https://cyberpress.org/",
+          "type": "Сайт",
+          "status": "Частично"
+        },
+        {
+          "name": "Novee",
+          "url": "https://novee.security/blog/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "CybersecurityNews",
+          "url": "https://cybersecuritynews.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "Xakep",
+          "url": "https://xakep.ru/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "BleepingComputer",
+          "url": "https://www.bleepingcomputer.com/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "PolySwarm",
+          "url": "https://blog.polyswarm.io/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "Securonix",
+          "url": "https://www.securonix.com/blog/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "SecPost",
+          "url": "https://secpost.ru/",
+          "type": "Сайт",
+          "status": "Прочитан"
+        },
+        {
+          "name": "@cyberyozh_official",
+          "url": "https://t.me/s/cyberyozh_official",
+          "type": "Telegram",
+          "status": "Прочитан"
+        },
+        {
+          "name": "@neuro_channel",
+          "url": "https://t.me/s/neuro_channel",
+          "type": "Telegram",
+          "status": "Недоступен (публичный предпросмотр не открылся)"
+        },
+        {
+          "name": "@ai_exee",
+          "url": "https://t.me/s/ai_exee",
+          "type": "Telegram",
+          "status": "Недоступен (публичный предпросмотр не открылся)"
+        }
+      ],
+      "limitations": [
+        "Глубина проверки 15 сайтов неодинакова; некоторые ленты полностью не загружались, два публичных Telegram-архива недоступны.",
+        "Поисковые показатели и ИИ-цитирования для anonhaven.com не измерены; баллы являются редакционными гипотезами.",
+        "Поиск по опубликованному AnonHaven не показывает непубличные черновики CMS.",
+        "В GITHUB выпуска нет подтверждения изменения приватной страницы ChatGPT Space: обновлять ее отдельно только при работающем инструментарии.",
+        "CISA каталог KEV возвращал HTTP 403; дата включения сверялась по независимым каталогам и отраслевым публикациям.",
+        "Ни один новый черновик CMS не подтвержден этим обновлением; публикаций не выполнялось.",
+        "Существующий опубликованный материал AGENTS.md и два материала PHP2Shell должны быть сохранены без новых дублей."
+      ]
     }
   ]
 }
