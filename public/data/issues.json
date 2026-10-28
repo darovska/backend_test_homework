@@ -645,7 +645,7 @@
           "kind": "Новости",
           "format": "Разбор инцидента",
           "category": "Инциденты",
-          "status": "К подготовке; повторно проверить CMS перед созданием",
+          "status": "Статья и Telegram Doc подготовлены; CMS не сохранена",
           "urgency": "Сегодня",
           "h1": "FirstVDS раскрыла, как атакующие читали диски серверов",
           "angle": "FirstVDS и ISPsystem 27 октября раскрыли постмортем атаки 17 октября: сборщик работал на узлах виртуализации. Объяснить границы подтвержденной компрометации и действия клиентов, без выдуманного объема эксфильтрации.",
@@ -729,7 +729,19 @@
           "scoreLabel": "Редакционный приоритет, не SEO-метрика",
           "targetLength": "3500–5500 знаков",
           "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
-          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk",
+          "deliverables": {
+            "articleGoogleDoc": "https://docs.google.com/document/d/15a4TMo2nOrIsGUiIRYb1TfsdjWXhw8ooP1ebyPbKiBA/edit",
+            "telegramGoogleDoc": "https://docs.google.com/document/d/1iVQYBQ_9f-uvzr4RMQgctp5pty18hBUgRvIWZKm3WnM/edit",
+            "coverFile": "anonhaven_2026-10-28_vmmanager_cover.jpg",
+            "googleDocsVerified": true,
+            "articleBodyFormatted": true,
+            "coverStandaloneJPEG": true,
+            "coverEmbeddedInGoogleDoc": false,
+            "zeroGPT": "not_run",
+            "cmsDraft": "not_saved_or_unverified",
+            "publication": "not_requested"
+          }
         },
         {
           "slug": "yoba-fake-ai-installers",
@@ -738,7 +750,7 @@
           "kind": "Новости",
           "format": "Срочная новость",
           "category": "Угрозы",
-          "status": "К подготовке; новый инфоповод",
+          "status": "Статья и Telegram Doc подготовлены; CMS не сохранена",
           "urgency": "Сегодня",
           "h1": "Поддельные ChatGPT и Claude заражали компьютеры через GitHub",
           "angle": "Исследование Check Point 27 октября: Yoba распространялся под видом десктопных приложений с помощью настоящих подписанных установщиков и подменной DLL.",
@@ -821,7 +833,19 @@
           "scoreLabel": "Редакционный приоритет, не SEO-метрика",
           "targetLength": "3500–5500 знаков",
           "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
-          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk",
+          "deliverables": {
+            "articleGoogleDoc": "https://docs.google.com/document/d/1GTPhXqZA2jM7mxST91PyqGBb2aKR9lbH2eE1xQwe7Zc/edit",
+            "telegramGoogleDoc": "https://docs.google.com/document/d/1b3lzqcGcSG3r0Jhg5-BIxSjpPcPNfOGIiLe5w9GBLLo/edit",
+            "coverFile": "anonhaven_2026-10-28_yoba_cover.jpg",
+            "googleDocsVerified": true,
+            "articleBodyFormatted": true,
+            "coverStandaloneJPEG": true,
+            "coverEmbeddedInGoogleDoc": false,
+            "zeroGPT": "not_run",
+            "cmsDraft": "not_saved_or_unverified",
+            "publication": "not_requested"
+          }
         },
         {
           "slug": "warp-agent-logs-vendor",
@@ -830,7 +854,7 @@
           "kind": "Новости",
           "format": "Новость",
           "category": "Инциденты",
-          "status": "В редакционной подборке 28.10; полная статья не подтверждена",
+          "status": "Статья и Telegram Doc подготовлены; CMS не сохранена",
           "urgency": "Сегодня",
           "h1": "Warp сообщила о доступе к журналам ИИ-агентов",
           "angle": "У провайдера Warp возможная компрометация журналов действий агентов и телеметрии. Данные о точном наборе полей и масштабе в стадии расследования.",
@@ -912,7 +936,19 @@
           "scoreLabel": "Редакционный приоритет, не SEO-метрика",
           "targetLength": "3500–5500 знаков",
           "seoSignal": "Гипотеза по намерению запроса; GSC/GA4 и частотность не измерены",
-          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk"
+          "reviewedAt": "28.10.2026, утренний цикл Europe/Minsk",
+          "deliverables": {
+            "articleGoogleDoc": "https://docs.google.com/document/d/1GzUcd9vh07SB25iQIu-paQCXAfsAeQV3zHP1BbjSChU/edit",
+            "telegramGoogleDoc": "https://docs.google.com/document/d/1ridf4WNNxR5VMcINpE6kCPYq7pLq4gDQpd6SCqOcaNU/edit",
+            "coverFile": "anonhaven_2026-10-28_warp_cover.jpg",
+            "googleDocsVerified": true,
+            "articleBodyFormatted": true,
+            "coverStandaloneJPEG": true,
+            "coverEmbeddedInGoogleDoc": false,
+            "zeroGPT": "not_run",
+            "cmsDraft": "not_saved_or_unverified",
+            "publication": "not_requested"
+          }
         },
         {
           "slug": "php2shell-cisa-kev",
@@ -1261,7 +1297,10 @@
         "В GITHUB выпуска нет подтверждения изменения приватной страницы ChatGPT Space: обновлять ее отдельно только при работающем инструментарии.",
         "CISA каталог KEV возвращал HTTP 403; дата включения сверялась по независимым каталогам и отраслевым публикациям.",
         "Ни один новый черновик CMS не подтвержден этим обновлением; публикаций не выполнялось.",
-        "Существующий опубликованный материал AGENTS.md и два материала PHP2Shell должны быть сохранены без новых дублей."
+        "Существующий опубликованный материал AGENTS.md и два материала PHP2Shell должны быть сохранены без новых дублей.",
+        "28 октября подготовлены три комплекта Google Docs (FirstVDS, Yoba, Warp) с отдельными Telegram-постами и реальными JPEG-обложками. Встроить обложки в новые Google Docs не удалось: передача локальных файлов блокируется.",
+        "TinyFish wallet -0.168 USD, поэтому авторизованные браузерные действия CMS и ZeroGPT не запускались. Первым незавершенным CMS-действием остается Барнаул.",
+        "На момент последней проверки Render live-деплой с commit 28.10 не подтвержден; autoDeploy включен."
       ]
     }
   ]
