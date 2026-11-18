@@ -2013,7 +2013,7 @@
         {
           "id": "apache-roller-cve-2026-129448-2026-11-17",
           "event_id": "apache-roller-cve-2026-129448-2026-11-17",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Уязвимости",
           "h1": "Apache Roller взламывают через XML-RPC без авторизации",
@@ -2108,12 +2108,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 98,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1IZBQqozz3qkCiesqTuFJPZmePPtIUNHJh60u_inC4yI/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1ZlCmFQ1j5MD6OC45IPuXWmk53zEK3_4aPTpyHYVwWCk/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "wppconnect-npm-whatsapp-2026-11-15",
           "event_id": "wppconnect-npm-whatsapp-2026-11-15",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Угрозы",
           "h1": "В WhatsApp-библиотеки WPPConnect встроили похититель сессий",
@@ -2191,12 +2197,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 97,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1EJbbToKVBfxdfhJguNCCZH5SWvcY5Xhi-ivfrZoWb9A/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1GiuXMaoV3uDCPW9Zu51ItgGGqTJf_QCRNy4dhBmvzaY/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "riken-fugaku-breach-2026-11-12",
           "event_id": "riken-fugaku-breach-2026-11-12",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Инциденты",
           "h1": "Суперкомпьютер Fugaku отключили после взлома панели мониторинга",
@@ -2279,12 +2291,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 96,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1Pmp77fcA642nnmB3fraC7no5wagaFpVJf2OVF188VJY/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1LrjpdhLgvVKyt9Zpk2s-7zq08X4weerdoEKfDEfLZ94/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "f6-rezet-anydoor-ai-2026-11-17",
           "event_id": "f6-rezet-anydoor-ai-2026-11-17",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Киберпреступность",
           "h1": "Группировка Rezet автоматизирует атаки на Россию с ИИ",
@@ -2375,12 +2393,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 95,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1oBHD4UJ3L2LXB9q9ys5M7iRUz5Nkt0M3KRsMey_t-N0/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1HIibY9hU_EfTGcz4_vKNnEs961n36CMyUu0-ESFjJWA/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "f6-gta6-mamont-play2win-2026-11-18",
           "event_id": "f6-gta6-mamont-play2win-2026-11-18",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Мошенничество",
           "h1": "Фанатов GTA VI обманывают через фальшивый PlayStation Store",
@@ -2471,12 +2495,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 94,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/17wTJpeQNC1dkJvmO5deXAk64Jzf3qwvN6E4m6rWAskA/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/16qHYWt8HOsCFvEBGYpx7VHV7u-mePelaEmGK3TMjDmc/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "uber-fireworks-driver-licenses-2026-10-07",
           "event_id": "uber-fireworks-driver-licenses-2026-10-07",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Инциденты",
           "h1": "Через AI-подрядчика похитили документы водителей Uber",
@@ -2559,12 +2589,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 93,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/18wr334g5-0X3SXq6LCcNaiSZbEfHQummRi_gcwFoozI/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1Uo9fuGuS9k-IJtdR3g14CnFIyO7LW5umkOd8LfWTW9w/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "scattered-spider-buchanan-sentence-2026-11-17",
           "event_id": "scattered-spider-buchanan-sentence-2026-11-17",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Киберпреступность",
           "h1": "Участник Scattered Spider получил шесть лет за криптокражи",
@@ -2647,12 +2683,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 90,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1nmL5tJ0rPd0WqvgCv2Bu1LIUVkYu2iTe6ndxKMpDEOU/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1X_5GW6W-hyuaEjtQHhyxpLDacrE7za0WNn2LgCkzfeM/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "tor-relay-ddos-0-4-9-17-2026-11-13",
           "event_id": "tor-relay-ddos-0-4-9-17-2026-11-13",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Приватность",
           "h1": "Сеть Tor отражает DDoS и выпустила срочный патч",
@@ -2730,12 +2772,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 89,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1Pd0uPS3-uxz-5OjDjIuedzmod5GRTMVahlOifTh4I-o/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1clFJcjWL6PyHQCKXnylIGtkaZiVv0F6TnASJw-KaGWo/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "epoch-ai-agents-live-website-2026-10-20",
           "event_id": "epoch-ai-agents-live-website-2026-10-20",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Искусственный интеллект",
           "h1": "ИИ-агенты пытались взломать сайт без разрешения исследователей",
@@ -2819,12 +2867,18 @@
             "type": "planned_no_file"
           },
           "editorial_score": 91,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1bsE6u0og8_7LtpHzTI3j5i3QbLvP2dLNUGOrMGU3jJQ/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/1j8sqCk602LHgOTmXChsKPDN6gU_6DoYc1cNB3Wl3QoY/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         },
         {
           "id": "angara-fake-reconciliation-msi-2026-11-18",
           "event_id": "angara-fake-reconciliation-msi-2026-11-18",
-          "status": "На выбор; CMS нужно проверить",
+          "status": "Google Docs: статья и Telegram сохранены; визуальные обложки и CMS не оформлены",
           "decision": "new",
           "category": "Угрозы",
           "h1": "Поддельные акты сверки устанавливают удаленный доступ к Windows",
@@ -2914,7 +2968,13 @@
             "type": "planned_no_file"
           },
           "editorial_score": 87,
-          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data"
+          "editorial_score_kind": "Hypothesis 0-100, not measured SEO data",
+          "preparedArticleUrl": "https://docs.google.com/document/d/1F7RCg3qP1pSnYQc464OKaI37cHpig2X0OshpiLWxWLs/edit",
+          "preparedTelegramUrl": "https://docs.google.com/document/d/17-ffPaUL6ScZ06QyEHJKBsD_M6QZReWQ7SN5jchHsYg/edit",
+          "mediaStatus": "cover not generated",
+          "cmsStatus": "not_saved",
+          "zerogptStatus": "not_run",
+          "preparationVerifiedAt": "2026-11-19"
         }
       ],
       "reserve": [
