@@ -1,0 +1,8 @@
+{
+  "appId": "com.kindhands.catshelter",
+  "appName": "Лапки добра",
+  "webDir": "www",
+  "backgroundColor": "#fff7ef",
+  "ios": { "contentInset": "never" },
+  "android": { "allowMixedContent": false }
+}
