@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#fff6ef">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icon-192.png">
+<meta name="description" content="Лапки добра — управляйте уютным приютом: спасайте сотни разных котов, ухаживайте за ними, находите семьи и развивайте приют.">
+<title>Лапки добра · Живой приют и магазин</title>
+<style>
+:root{--ink:#51424b;--soft:#987f88;--rose:#d77792;--rose2:#f6cfda;--mint:#72bba1;--cream:#fff7ef;--gold:#f5c872;--line:#f0deda;--paper:#fffdfa;--danger:#d96d73;--shadow:0 11px 35px #8a576025}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{display:flex;justify-content:center;background:radial-gradient(circle at 15% 10%,#fde0e5 0,transparent 45%),radial-gradient(circle at 85% 85%,#eed5cd 0,transparent 47%),#f2e6dd;font-family:ui-rounded,"Trebuchet MS","Segoe UI",system-ui,-apple-system,sans-serif;color:var(--ink);-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer;touch-action:manipulation}button:disabled{cursor:not-allowed;opacity:.48}button:focus-visible{outline:3px solid #8bc8ad;outline-offset:2px}button:active:not(:disabled){transform:scale(.98)}[hidden]{display:none!important}.app{width:100%;max-width:480px;height:100dvh;min-height:480px;position:relative;overflow:hidden;background:var(--cream);box-shadow:0 0 55px #6d49442e}.screen{height:100%;min-height:0}.start{height:100%;overflow-y:auto;padding:26px 18px max(25px,env(safe-area-inset-bottom));text-align:center;background:radial-gradient(circle at 50% 20%,#fff0f4,transparent 55%),linear-gradient(#fff9f4,#fff4ea)}.eyebrow{font-weight:1000;color:#bc8195;font-size:10px;letter-spacing:.2em;text-transform:uppercase}.brand{font-size:clamp(35px,9vw,47px);letter-spacing:-.07em;margin:8px 0 2px;line-height:1.12;font-weight:1000}.brand b{color:var(--rose)}.subtitle{font-size:13px;color:var(--soft);line-height:1.45;margin:6px auto 13px;max-width:320px}.hero{height:172px;max-width:350px;margin:10px auto 8px;position:relative;background:radial-gradient(ellipse at center,#f7d1da,transparent 64%)}.hero-art{height:160px;display:flex;justify-content:center;align-items:center;gap:-20px}.hero-cat{display:block;width:132px;height:144px;margin:0 -13px;filter:drop-shadow(0 9px 5px #bd85893a)}.hero-cat:first-child{transform:rotate(-8deg) translateY(12px)}.hero-cat:nth-child(2){z-index:2;transform:translateY(-5px) scale(1.08)}.hero-cat:last-child{transform:rotate(8deg) translateY(12px)}.intro-title{font-size:16px;margin:8px 0 9px}.caretakers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;text-align:left}.caretaker{border:2px solid #efdfdf;border-radius:18px;background:white;padding:12px 9px;display:flex;align-items:center;gap:8px;text-align:left;color:var(--ink);min-height:68px;transition:border-color .2s,background .2s}.caretaker.is-selected{border-color:var(--rose);background:#fff0f4;box-shadow:0 4px 12px #eaa6b025}.caretaker .portrait{font-size:34px}.caretaker strong{font-size:13px;display:block}.caretaker small{font-size:10px;display:block;color:var(--soft);line-height:1.25;margin-top:3px}.start-bottom{display:grid;gap:9px;margin:18px auto 0;max-width:340px}.btn{border:0;border-radius:15px;padding:13px 15px;font-weight:900;transition:transform .15s}.btn-rose{background:linear-gradient(115deg,#edabc0,#d77392);color:white;box-shadow:0 8px 17px #d991a050}.btn-light{background:#fff0e7;color:#a76c77}.btn-mint{background:#d9f2e7;color:#428871}.btn-white{background:white;color:var(--ink);border:1px solid #ead8d6}.tiny{font-size:11px;color:#af99a0}.game{display:flex;flex-direction:column;overflow:hidden}.top{flex:none;background:#fffbf7;border-bottom:1px solid #f2e3dd;padding:10px 13px 9px;z-index:2}.topline{display:flex;align-items:center;gap:8px}.appname{font-size:16px;font-weight:1000;letter-spacing:-.055em;flex:1;white-space:nowrap}.playerpic{font-size:23px;display:grid;place-items:center;width:36px;height:36px;background:#fff0ef;border-radius:13px}.coinpill{font-weight:1000;font-size:13px;background:#fff0ce;padding:8px 9px;border-radius:13px;white-space:nowrap}.statusline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:9px}.statbox{background:#fff4f0;padding:7px 3px 6px;border-radius:11px;text-align:center;min-width:0}.statbox b{display:block;font-size:12px;white-space:nowrap}.statbox small{display:block;color:var(--soft);font-size:9px;font-weight:800;margin-top:2px;white-space:nowrap}.statusbox-danger{background:#ffdedf;color:#ac464e}.progress-wrap{display:grid;grid-template-columns:auto 1fr auto;gap:7px;align-items:center;margin-top:8px;font-size:10px;font-weight:900;color:#aa818b}.riskline{height:7px;background:#f1e1e1;border-radius:50px;overflow:hidden}.riskfill{height:100%;background:linear-gradient(90deg,#e9b76b,#e46c79);border-radius:50px;transition:width .5s}.content{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding:13px 12px 18px}.bottomnav{flex:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;padding:8px 9px max(9px,env(safe-area-inset-bottom));background:#fffbf7;border-top:1px solid #f1e2dd}.navbtn{background:transparent;border:0;border-radius:12px;padding:7px 2px;font-size:10px;font-weight:900;color:#a58d92;display:grid;place-items:center;gap:3px}.navbtn span{font-size:23px}.navbtn.active{color:#b9647e;background:#fff0f2}.banner{border:1px solid #edcfd6;background:#fff0f3;padding:10px 11px;border-radius:15px;margin-bottom:10px;font-size:12px;line-height:1.45}.banner.warning{background:#fff1e5;border-color:#f5d3ac}.banner.danger{background:#ffe6e5;border-color:#edabab;color:#a64e59}.banner.good{background:#e8f7ef;border-color:#b9dfcc;color:#43856b}.banner strong{font-weight:1000}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 3px 9px}.sectionhead h2{font-size:16px;margin:0;font-weight:1000;letter-spacing:-.04em}.sectionhead small{font-size:10px;color:#ab9298;font-weight:800}.room{position:relative;border:2px solid #f0dcd9;border-radius:24px;padding:10px;overflow:hidden;background:linear-gradient(180deg,#fcece6 0,#f8e3d8 30%,#f4e0cc 30%,#f2dfd0 100%);box-shadow:inset 0 8px 16px #8a665714}.room-head{height:52px;display:flex;align-items:flex-start;justify-content:space-between;position:relative;z-index:1}.window{width:66px;height:46px;border:6px solid #fff8f3;border-radius:15px 15px 7px 7px;background:linear-gradient(160deg,#b4dfe5,#dcece7);box-shadow:0 4px 0 #cfaea4;position:relative}.window:before{content:"";position:absolute;top:0;bottom:0;left:48%;width:5px;background:#fff8f3}.room-cozy{font-size:24px;letter-spacing:4px}.room-people{font-size:21px;text-align:center;line-height:1.6;margin-top:4px}.room-people small{font-size:10px;color:#a67f76;display:inline-block;vertical-align:middle;margin-left:6px}.litter-scene{font-size:11px;padding:6px 9px;border:1px dashed #d5b2a2;background:#ffffffa8;color:#986d65;border-radius:11px;margin:4px 2px 0;display:flex;gap:7px;align-items:center}.litter-scene .litter-icon{font-size:21px}.roomcats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 7px;padding-bottom:4px}.cat{min-width:0;background:#fffcf4cf;border:1px solid #fff;box-shadow:0 5px 10px #ac807625;border-radius:18px;padding:8px 6px 7px;min-height:182px;display:flex;flex-direction:column;align-items:center;color:var(--ink);position:relative;overflow:hidden;transition:transform .2s,filter .2s,opacity .5s}.cat.ready{background:#eaffefef;border-color:#a0d3ad}.cat.leaving{transform:translateX(130%) rotate(8deg);opacity:0}.cat:after{content:"";position:absolute;bottom:8px;width:60%;height:9px;background:#a9877f28;filter:blur(6px);border-radius:50%;z-index:-1}.catbar{height:10px;border-radius:100px;background:#ddc4bb;width:100%;overflow:hidden;position:relative;margin-bottom:1px}.catbar>i{display:block;height:100%;border-radius:100px;background:var(--bar-color,#d96573);width:var(--bar-width);transition:width .6s,background .3s}.catstate{font-size:9px;font-weight:1000;margin:3px 0 0;max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--state-color,#a35c67)}.cat-art{width:108px;height:109px;max-width:100%;margin:1px auto -4px;flex:none}.cat-art svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 4px 1px #9d79763d)}.catname{font-size:13px;font-weight:1000;margin:3px 0 1px;max-width:100%;white-space:nowrap;text-overflow:ellipsis}.catneed{font-size:10px;color:#947d7b;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}.room-footer{font-size:10px;color:#ae8a87;text-align:center;margin-top:7px}.cleanbox{margin:10px 0 14px;border-radius:16px;background:white;border:1px solid var(--line);padding:12px;display:flex;align-items:center;gap:10px}.cleanbox .broom{font-size:28px}.clean-main{flex:1;min-width:0}.clean-title{font-size:12px;font-weight:1000;margin-bottom:6px}.meter{height:7px;border-radius:40px;background:#f1e7e5;overflow:hidden}.meter>i{display:block;height:100%;width:var(--meter);background:var(--color);border-radius:40px;transition:width .5s,background .3s}.mini-btn{border:0;border-radius:11px;padding:9px 11px;background:#fae6dc;color:#966c71;font-weight:1000;font-size:11px;white-space:nowrap}.newcomer{background:#fffbf1;border:1px dashed #e6be8f;border-radius:15px;padding:10px;display:flex;align-items:center;gap:10px;font-size:11px}.newcomer .emoji{font-size:26px}.newcomer strong{font-size:12px;display:block}.newcomer small{color:var(--soft);display:block;margin-top:3px}.caution{font-size:11px;line-height:1.5;color:#ac8d87;padding:5px 6px}.card{background:#fffdfa;border:1px solid #eeded9;border-radius:18px;padding:13px;box-shadow:0 3px 11px #b48e8412;margin-bottom:10px}.card-head{display:flex;align-items:flex-start;gap:10px}.card-emoji{font-size:30px;width:42px;height:45px;display:grid;place-items:center;border-radius:13px;background:#fdf0e9;flex:none}.card-head h3{font-size:14px;margin:2px 0 3px}.card-head p{font-size:11px;margin:0;color:var(--soft);line-height:1.45}.card-side{margin-left:auto}.staff-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:12px;font-size:11px}.staff-foot strong{font-size:12px}.stafftag{display:inline-block;background:#e5f4e8;color:#568f6d;font-size:10px;border-radius:8px;padding:4px 7px;margin-top:7px}.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.infobox{background:#fff;border:1px solid #f0dfdc;border-radius:15px;padding:12px}.infobox b{display:block;font-size:17px}.infobox small{font-size:10px;color:#ad9396}.logentry{display:flex;gap:10px;justify-content:space-between;border-top:1px solid #f3e5e1;padding:10px 0;font-size:11px}.logentry:first-child{border-top:0}.logentry time{font-size:10px;color:var(--soft)}.credit{color:#3d9a72;font-weight:1000}.debit{color:#c66c77;font-weight:1000}.album{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.album-card{text-align:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:11px 6px}.album-art{height:90px;display:flex;justify-content:center}.album-art svg{width:95px;height:95px}.album-card strong{display:block;font-size:12px}.album-card small{display:block;font-size:10px;color:var(--soft);margin-top:3px}.empty{font-size:12px;line-height:1.55;color:var(--soft);text-align:center;padding:36px 14px}.overlay{position:absolute;z-index:9;inset:0;background:#3c333c82;display:flex;align-items:flex-end;justify-content:center;animation:veil .2s ease}.sheet{width:100%;max-height:min(89dvh,790px);min-height:250px;overflow-y:auto;overscroll-behavior:contain;background:#fffaf6;border-radius:25px 25px 0 0;padding:16px 16px max(23px,env(safe-area-inset-bottom));box-shadow:0 -12px 50px #35272d40;animation:rise .24s ease}.sheethead{display:flex;justify-content:space-between;align-items:center;gap:9px}.sheethead h2{font-size:21px;margin:0;font-weight:1000}.sheethead small{display:block;color:var(--soft);font-size:11px;margin-top:3px}.closebtn{width:34px;height:34px;border:0;background:#f6e7e7;border-radius:11px;font-size:18px;color:#a27881}.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:12px 0}.comparebox{border-radius:16px;background:#f6e7e3;text-align:center;padding:6px 7px 9px}.comparebox.now{background:#e6f5eb}.comparebox svg{display:block;width:min(100%,137px);height:135px;margin:0 auto}.comparebox span{font-size:11px;font-weight:1000}.comparrow{display:block;font-size:9px;color:#a28383}.needs{display:grid;gap:8px}.needline{display:grid;grid-template-columns:85px 1fr 37px;align-items:center;gap:6px;font-size:11px;font-weight:900}.needline .meter{height:9px}.needline b{text-align:right;font-size:10px}.actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:14px 0 10px}.action{border:1px solid #f0d7dd;background:#fff;border-radius:15px;padding:11px 6px;display:grid;justify-items:center;gap:3px;color:var(--ink)}.action span{font-size:23px}.action b{font-size:12px}.action small{font-size:10px;color:#ae8991}.action.recommended{border-color:#e89bb1;background:#fff0f2}.action.is-done{border-color:#abd8bd;background:#ecf9f0}.vetbox{border-radius:12px;background:#f4ede7;padding:11px 12px;font-size:11px;display:flex;align-items:center;gap:9px;line-height:1.45}.vetbox>div{flex:1}.vetbox strong{display:block;font-size:11px}.vetbox small{color:var(--soft);display:block}.modalveil{position:absolute;inset:0;background:#4437429e;z-index:11;display:grid;place-items:center;padding:18px}.modal{background:#fffbf7;width:100%;max-width:390px;text-align:center;border-radius:25px;padding:23px 20px;box-shadow:var(--shadow);animation:pop .24s ease}.modal .bigemoji{font-size:50px;display:block;margin:0 0 9px}.modal h2{font-size:23px;letter-spacing:-.05em;margin:0 0 9px}.modal p{font-size:12px;color:var(--soft);line-height:1.55;margin:0 0 17px}.modal .btn{width:100%;margin-top:8px}.toast{position:absolute;z-index:12;top:99px;left:50%;transform:translateX(-50%);width:calc(100% - 24px);max-width:400px;background:#554650;color:white;border-radius:15px;padding:12px 14px;box-shadow:0 10px 25px #30232840;font-size:12px;font-weight:800;line-height:1.5;animation:drop .23s ease;pointer-events:none}.adopt-toast{position:absolute;z-index:8;bottom:calc(71px + env(safe-area-inset-bottom));left:10px;right:10px;background:#fffefa;border:2px solid #dfbdc5;border-radius:17px;box-shadow:0 9px 30px #7d59613d;padding:12px;display:flex;gap:10px;align-items:center;font-size:11px}.adopt-toast .paw{font-size:28px}.adopt-toast .info{flex:1;line-height:1.4}.adopt-toast .info strong{font-size:12px;display:block}.adopt-toast .info small{display:block;color:var(--soft);margin-top:4px}.adopt-toast .mini-btn{background:#fde2e9;color:#b35d7c}.adopt-toast .x{position:absolute;right:2px;top:2px;border:0;background:transparent;color:#a79299}.footer-note{text-align:center;color:#b29aa0;font-size:10px;margin:15px 8px}.tag{font-size:10px;background:#fce9e2;color:#a3787c;padding:5px 8px;border-radius:8px;display:inline-block}.donation{font-size:11px;font-weight:1000;color:#668f72}.clean-glow{color:#46946e}.rowline{display:flex;align-items:center;justify-content:space-between;gap:8px}.space{margin-top:12px}.warningline{font-size:10px;color:#b1786e}.smallbtn{padding:9px 12px;border-radius:11px;font-size:11px}.spark{color:#d88b99}.shop-call{background:#f4efff;border:1px solid #e3d5f4;border-radius:16px;padding:12px;margin-bottom:10px}.shop-call .btn{margin-top:8px;font-size:12px;width:100%}.profile{display:flex;align-items:center;gap:11px;border:1px solid #efdede;border-radius:14px;background:white;padding:10px;margin-bottom:10px}.profile .human{font-size:32px}.profile strong{font-size:13px}.profile small{display:block;color:var(--soft);font-size:10px;margin-top:3px}
+@keyframes veil{from{opacity:0}to{opacity:1}}@keyframes rise{from{transform:translateY(22px);opacity:.6}to{transform:translateY(0);opacity:1}}@keyframes drop{from{opacity:0;transform:translate(-50%,-10px)}to{opacity:1;transform:translate(-50%,0)}}@keyframes pop{from{transform:scale(.93);opacity:.3}to{transform:scale(1);opacity:1}}
+@media(max-width:360px){.top{padding:8px 8px}.content{padding:9px 8px}.room{padding:6px}.roomcats{gap:6px}.cat{padding:6px 3px;min-height:173px}.cat-art{width:98px;height:102px}.statbox small{font-size:8px}.statbox b{font-size:11px}.caretaker{padding:9px 5px}.caretaker .portrait{font-size:27px}.sheet{padding:13px 12px 20px}}
+@media(min-width:520px){.app{height:min(94dvh,900px);margin:auto;border-radius:25px}.sheet{border-radius:25px 25px 0 0}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+
+
+/* V6 — живые комнаты и магазин. Все объекты рисуются локально; без внешних ресурсов. */
+.bottomnav{grid-template-columns:repeat(5,minmax(0,1fr));gap:1px}.navbtn{font-size:9px}.navbtn span{font-size:20px}
+.walk-field{height:455px;border-radius:22px;overflow:hidden;position:relative;border:2px solid #efd4c4;box-shadow:inset 0 6px 20px #a47d6b24;background:#edddc8}
+.stage-wall{position:absolute;inset:0 0 58% 0;background:repeating-linear-gradient(90deg,#ffefe8 0px,#ffefe8 26px,#fce8df 27px,#ffefe8 28px)}
+.stage-wall:after{content:'';position:absolute;bottom:0;left:0;right:0;height:9px;background:#e9bcaa;box-shadow:0 4px 2px #cda9906c}
+.stage-floor{position:absolute;inset:42% 0 0 0;background:repeating-linear-gradient(92deg,transparent 0,transparent 42px,#d7b99c4f 43px,#d7b99c4f 45px),linear-gradient(160deg,#f5e0c8,#e9ccab);transform-origin:top}
+.stage-rug{position:absolute;left:18%;top:53%;width:64%;height:32%;background:#eecac5a8;border:6px solid #fff9ed8c;border-radius:50%;box-shadow:0 8px 10px #90735727;pointer-events:none}
+.stage-window{position:absolute;left:9%;top:6%;width:78px;height:80px;border:8px solid #fffaf4;border-bottom-width:11px;border-radius:20px 20px 8px 8px;background:linear-gradient(145deg,#a8d9df 5%,#f1fbdf 65%);box-shadow:0 4px 0 #d7ad9f;z-index:1}
+.stage-window:after{content:'';height:100%;width:7px;background:#fffaf4;position:absolute;left:48%;top:0}
+.stage-door{position:absolute;right:5%;top:5%;width:71px;height:143px;background:linear-gradient(110deg,#d8ae91,#eec5a7);border:7px solid #fff8ef;border-bottom:0;border-radius:23px 23px 0 0;z-index:1;box-shadow:inset -7px 0 6px #b78a7773}
+.stage-door:after{content:'●';position:absolute;right:9px;top:75px;color:#fff8be;font-size:20px}
+.stage-plant{position:absolute;top:21%;left:41%;font-size:40px;z-index:1;filter:drop-shadow(1px 5px 2px #9e79534b)}
+.stage-bowls{position:absolute;bottom:20px;left:14px;font-size:26px;z-index:2;pointer-events:none}
+.stage-litter{position:absolute;bottom:20px;right:14px;font-size:27px;z-index:2;pointer-events:none}
+.stage-beds{position:absolute;top:43%;left:5%;display:flex;flex-wrap:wrap;max-width:55%;gap:6px;font-size:28px;z-index:2;pointer-events:none}
+.stage-toys{position:absolute;top:47%;right:8%;font-size:25px;z-index:2;pointer-events:none}
+.stage-staff{position:absolute;left:6px;top:30%;font-size:23px;z-index:2;pointer-events:none}
+.stage-staff small{font-size:9px;background:#fffdf4cc;padding:2px 4px;border-radius:6px}
+.walk-cat{border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;position:absolute;width:110px;min-width:0;z-index:3;background:transparent;color:var(--ink);transform:translate(-50%,-50%);transition:left 2.75s ease-in-out,top 2.75s ease-in-out;filter:drop-shadow(0 4px 3px #8b66532d)}
+.walk-cat .catbar{height:9px;border:1px solid #fff;box-shadow:0 2px 4px #5d393b3b;background:#e2bbb5;width:90px;margin-bottom:2px}
+.walk-name{background:#fffcf0ea;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:105px;border-radius:7px;padding:2px 6px;font-size:10px;font-weight:1000;box-shadow:0 2px 4px #87695424}
+.walk-sprite{height:80px;width:80px;display:block;transition:transform .8s}.walk-sprite svg{width:100%;height:100%;filter:drop-shadow(0 3px 1px #987a6044)}
+.walk-cat.sleeping .walk-sprite{transform:rotate(-13deg) scale(.93)}.walk-cat.sleeping .walk-bubble:after{content:' 💤'}
+.walk-cat.playing .walk-sprite{animation:kitty-bob 1.15s ease-in-out infinite alternate}.walk-cat.leaving{opacity:0;transform:translate(95%,-130%) rotate(9deg);transition:all .65s}
+@keyframes kitty-bob{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.walk-bubble{background:#fff9f3e8;font-size:9px;padding:2px 5px;border-radius:6px;max-width:109px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.flea-sticker{position:absolute;top:33px;right:9px;font-size:19px;filter:drop-shadow(0 1px 2px #fff);pointer-events:none}
+.room-picker{display:flex;justify-content:space-between;align-items:center;gap:9px;background:#fffdfa;border:1px solid var(--line);border-radius:14px;margin:0 0 9px;padding:7px}
+.room-picker strong{font-size:12px}.room-picker small{display:block;font-size:9px;color:var(--soft);margin-top:2px}
+.room-picker button{border:0;background:#f8e8e1;border-radius:9px;color:#936c6e;font-weight:1000;padding:7px 12px}
+.stage-tip{margin:7px 0 0;text-align:center;font-size:10px;color:#987d7f}
+.shop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.shop-product{background:#fffdfa;border:1px solid #ecdcd8;border-radius:15px;padding:11px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.shop-product .goods-emoji{font-size:30px}.shop-product strong{font-size:12px;line-height:1.2}.shop-product p{font-size:10px;line-height:1.4;color:#917d7b;margin:0;flex:1}.shop-product .stock{color:#a77880;font-size:10px;font-weight:900}
+.shop-product button{width:100%;font-size:10px;padding:9px 5px}.shop-product .btn-light{background:#f9ecdf}
+.shop-product small{font-size:9px;color:#958484}.premium-prices{font-size:11px}.shop-badge{background:#edf8f0;color:#45846b;font-size:9px;font-weight:900;padding:4px 7px;border-radius:15px;white-space:nowrap}
+.supply-alert{font-size:10px;color:#967d7a;padding:7px 10px;background:#fffaf4;border-radius:12px;margin:9px 0}
+.care-source{font-weight:900;color:#458f76}.stage-item{font-size:28px}.shop-inline{text-align:center;font-size:11px}
+.comparebox{position:relative}.detail-flea{position:absolute;right:14%;top:25%;font-size:23px}
+@media (prefers-reduced-motion:reduce){.walk-cat{transition:none!important}.walk-cat.playing .walk-sprite{animation:none}}
+
+</style>
+</head>
+<body>
+<div class="app" id="app">
+ <section class="start screen" id="startScreen">
+  <div class="eyebrow">Cat Shelter · Kind Hands</div>
+  <h1 class="brand">Лапки <b>добра</b> 🐾</h1>
+  <p class="subtitle">Открой свой приют. Преврати испуганных и неухоженных котиков в счастливых домашних любимцев.</p>
+  <div class="hero"><div class="hero-art" id="heroArt">🐈 🐈‍⬛ 🐱</div></div>
+  <h2 class="intro-title">Кто откроет приют?</h2>
+  <div class="caretakers" id="caretakerList"></div>
+  <div class="start-bottom"><button class="btn btn-rose" id="startBtn">🏡 Открыть приют</button><button class="btn btn-light" id="resumeBtn" hidden>↩ Продолжить сохранённую игру</button><small class="tiny">15 552 вариантов внешности · живые комнаты · магазин и забота</small></div>
+ </section>
+ <section class="game screen" id="gameScreen" hidden>
+  <header class="top">
+   <div class="topline"><div class="playerpic" id="playerPic">👩</div><strong class="appname">Лапки добра <span class="spark">✦</span></strong><div class="coinpill" id="moneyValue">🪙 260</div><button class="mini-btn" id="helpButton" aria-label="Как играть">❔</button></div>
+   <div class="statusline"><div class="statbox"><b id="dayValue">1</b><small>день</small></div><div class="statbox"><b id="capacityValue">3 / 4</b><small>котики / места</small></div><div class="statbox"><b id="adoptedValue">0</b><small>нашли дом</small></div><div class="statbox"><b id="arrivalsValue">0:40</b><small>новый котик</small></div></div>
+   <div class="progress-wrap"><span>⚠️ Риск закрытия</span><div class="riskline"><div class="riskfill" id="riskFill" style="width:0"></div></div><span id="riskValue">0%</span></div>
+  </header>
+  <main class="content" id="content"></main>
+  <nav class="bottomnav" aria-label="Разделы игры">
+   <button class="navbtn active" data-tab="room"><span>🏠</span>Комната</button>
+   <button class="navbtn" data-tab="team"><span>👩‍⚕️</span>Команда</button>
+   <button class="navbtn" data-tab="album"><span>📸</span>Истории</button>
+   <button class="navbtn" data-tab="shop"><span>🛍️</span>Магазин</button><button class="navbtn" data-tab="cash"><span>💰</span>Касса</button>
+  </nav>
+ </section>
+ <div class="overlay" id="sheetOverlay" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Карточка котика"></div></div>
+ <div class="modalveil" id="modalOverlay" hidden><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+ <div class="adopt-toast" id="adoptToast" hidden></div>
+ <div class="toast" id="toast" role="status" hidden></div>
+</div>
+<script>
+(()=>{'use strict';
+/* ===== Constants / deterministic graphic variants ===== */
+const KEY='lapki-dobra-shelter-v5', DAY_SECONDS=34, MAX_CATS=40;
+const COLORS=[
+ ['#e6a465','#c98553','#ffe8c5','Рыжий'],['#f8dfac','#dec48f','#fff0d6','Кремовый'],['#44434e','#302f3b','#beb7b8','Чёрный'],['#f4f0e9','#d6d0cb','#fffefa','Белоснежный'],
+ ['#9f9b9d','#79757b','#d6ced0','Серый'],['#a67351','#835b40','#edd0aa','Карамельный'],['#d8a68e','#b88167','#fae1d1','Персиковый'],['#d0c4b4','#a89e96','#f3e7d7','Бежевый'],
+ ['#b8bbbd','#8e989f','#e7e8e3','Серебристый'],['#d99562','#a15d42','#fae7cf','Медный'],['#695b64','#40333c','#d5c0c5','Дымчатый'],['#f2c0a4','#d49d87','#ffe8dd','Абрикосовый'],
+ ['#896e58','#665441','#deccb1','Коричневый'],['#dfbb89','#b99871','#f5e1c0','Песочный'],['#b0a5a1','#8e8180','#f0dfda','Лиловый'],['#746b60','#51483e','#d4c3ac','Графитовый'],
+ ['#efcea9','#c9ad93','#fff0d4','Пломбир'],['#dca6ad','#ae7986','#fbe0e4','Розоватый']];
+const PATTERNS=['Полосатый','Пятнистый','Двухцветный','Трёхцветный','С белой грудкой','С тёмной мордочкой','Мраморный','Однотонный','С белыми лапками'];
+const EYES=['#529776','#c69c4d','#6f9db6','#8e76b0','#a0ac51','#b78562','#5d8c87','#c78387'];
+const NAMES=['Мурзик','Бусинка','Персик','Тучка','Плюша','Зефир','Кекс','Пончик','Кнопка','Мята','Рыжик','Шпрот','Пушок','Лапка','Булочка','Снежок','Тиша','Фрося','Моти','Крош','Вафля','Пуговка','Карамель','Барсик','Пятнышко','Пиксель','Тофу','Слива','Бублик','Мышка','Симба','Луна','Соня','Трюфель','Ириска','Марс','Фунтик','Печенька','Финик','Боня','Шуша','Жужа','Котлетка','Матрос','Капля','Крошка','Пухля','Чили','Лис','Фиалка','Злата','Терра','Латте','Пломбир','Шарик','Панда','Дымка','Уголёк','Горошек','Бублик','Семечка','Селёдка','Маффин','Батон','Шафран','Туман','Корица','Кокос','Фасоль','Каспер','Пума','Грей','Хвостик','Ромашка','Слива','Орео','Пенка','Мармелад','Тучка','Черника','Ласка','Искорка','Клякса','Бонбон','Груша','Шелли','Царапка','Киви','Пчёлка','Касси','Лисичка','Фисташка','Ночка','Сушка','Халва','Бриз','Каштан','Чип','Малыш','Мята'];
+const CHARACTERS=[
+ {id:'mila',name:'Мила',emoji:'👩🏻',bonus:'Пожертвования +15%',details:'Добрая и внимательная.',donation:1.15,heal:1,upgrade:1,staff:1},
+ {id:'max',name:'Макс',emoji:'👨🏽',bonus:'Расширение −15%',details:'Любит строить и чинить.',donation:1,heal:1,upgrade:.85,staff:1},
+ {id:'anya',name:'Аня',emoji:'👩🏾‍⚕️',bonus:'Лечение +15%',details:'Знает всё о здоровье.',donation:1,heal:1.15,upgrade:1,staff:1},
+ {id:'tim',name:'Тим',emoji:'🧑🏼',bonus:'Наём −20%',details:'Сильный организатор.',donation:1,heal:1,upgrade:1,staff:.8}];
+const NEEDS=[{key:'food',name:'Сытость',icon:'🐟',short:'Покормить',cost:7,gain:43},{key:'health',name:'Здоровье',icon:'💊',short:'Полечить',cost:13,gain:39},{key:'hygiene',name:'Чистота',icon:'🛁',short:'Искупать',cost:9,gain:46},{key:'coat',name:'Шерсть',icon:'🪮',short:'Вычесать',cost:5,gain:45}];
+const STAFF=[{id:'feeder',name:'Смотритель',icon:'🧑‍🍳',desc:'Автоматически кормит самого голодного котика.',cost:115,salary:8,field:'food',gain:21},{id:'vet',name:'Ветеринар',icon:'👩‍⚕️',desc:'Регулярно подлечивает самого слабого питомца.',cost:155,salary:12,field:'health',gain:16},{id:'groom',name:'Грумер',icon:'🧑‍🎨',desc:'Моет и вычёсывает шерсть котиков.',cost:125,salary:9,field:'groom',gain:18},{id:'cleaner',name:'Помощник',icon:'🧹',desc:'Убирает общую комнату и лотки.',cost:105,salary:7,field:'clean',gain:26}];
+const OWNER=['👩‍🦰','👨‍🦱','🧑','👩','👴','👵','👨‍👩‍👧','👩‍❤️‍👩','👨‍👨‍👦'];
+const $=id=>document.getElementById(id), clamp=(v,lo=0,hi=100)=>Math.max(lo,Math.min(hi,v)), pick=arr=>arr[Math.floor(Math.random()*arr.length)];
+const randint=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+const fmt=n=>Math.round(n).toLocaleString('ru-RU');
+const barColor=n=>n>=80?'#67b991':n>=52?'#e9b86b':'#e17779';
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const timeFmt=n=>`${Math.floor(Math.max(0,n)/60)}:${String(Math.ceil(Math.max(0,n))%60).padStart(2,'0')}`;
+function createCat(id,day,baby=false,base=null){
+ const palette=base?.palette??randint(0,COLORS.length-1), pattern=base?.pattern??randint(0,PATTERNS.length-1);
+ const stats={food:randint(baby?48:28,baby?72:58),health:randint(baby?42:35,baby?70:68),hygiene:randint(baby?40:18,baby?67:55),coat:randint(baby?35:19,baby?66:56)};
+ const vetRisk=!baby&&Math.random()<.26;
+ return {id,name:pick(NAMES),fleas:!baby&&Math.random()<.31,beforeFleas:false,palette,pattern,eye:randint(0,EYES.length-1),ears:randint(0,2),tail:randint(0,3),face:randint(0,3),size:randint(0,2),baby,vetRisk,vetDone:false,litterDay:vetRisk?day+randint(4,7):null,stats,before:{...stats},arrival:day,ready:false,leaving:false};
+}
+function svgCat(cat,mode='now',suffix='room'){
+ const s=mode==='before'?cat.before:cat.stats, [fur,dark,light]=COLORS[cat.palette];
+ const badSkin=s.hygiene<73, badFur=s.coat<70,ill=s.health<50,well=Object.values(s).every(n=>n>=80);
+ const ey=EYES[cat.eye],bodyScale=cat.baby?.77+cat.size*.035:.91+cat.size*.04;
+ const patch=cat.pattern===2?`<path d="M75 50 Q91 40 113 62 L112 83 Q96 87 78 77Z" fill="${light}"/>`:cat.pattern===3?`<path d="M40 55Q54 42 63 57L65 77Q40 82 40 55" fill="${light}"/><path d="M83 45Q104 37 110 58L99 73Q80 67 83 45" fill="${dark}"/>`:cat.pattern===4?`<ellipse cx="74" cy="113" rx="24" ry="24" fill="${light}"/>`:cat.pattern===5?`<path d="M42 65Q75 20 111 63 Q107 86 75 89Q42 85 42 65" fill="${dark}" opacity=".87"/>`:'';
+ const stripes=cat.pattern===0?`<path d="M56 46l-8 17m22-20-4 16m21-16 6 16M54 102l-8 12m60-12 7 13" stroke="${dark}" stroke-width="6" stroke-linecap="round" opacity=".7"/>`:cat.pattern===6?`<path d="M48 55q20 25 39-8m-31 24q25-15 43 11" stroke="${dark}" fill="none" stroke-width="5" opacity=".5"/>`:'';
+ const spots=cat.pattern===1?`<ellipse cx="54" cy="57" rx="9" ry="8" fill="${dark}"/><ellipse cx="95" cy="64" rx="9" ry="11" fill="${dark}"/><ellipse cx="105" cy="110" rx="10" ry="13" fill="${dark}"/>`:'';
+ const whitelap=cat.pattern===8?`<ellipse cx="49" cy="127" rx="15" ry="9" fill="${light}"/><ellipse cx="98" cy="127" rx="15" ry="9" fill="${light}"/>`:'';
+ const dirt=badSkin?`<g fill="#705d55" opacity="${s.hygiene<35?.62:.3}"><circle cx="47" cy="62" r="3"/><circle cx="98" cy="89" r="2.7"/><circle cx="58" cy="111" r="4"/><circle cx="110" cy="113" r="2"/><circle cx="88" cy="56" r="2"/></g>`:'';
+ const frizz=badFur?`<g fill="none" stroke="${dark}" stroke-width="2.5" stroke-linecap="round"><path d="M31 84l-11-8 8 0-9-9"/><path d="M113 82l13-8-8-2 9-10"/><path d="M44 35l-7-12 10 5-3-12"/><path d="M104 35l8-14-1 10 9-7"/><path d="M54 129l-13 9 4-13"/></g>`:'';
+ const eyes=ill?`<path d="M53 75q8 6 16 0M85 75q8 6 15 0" stroke="#503e45" stroke-width="3.5" fill="none" stroke-linecap="round"/>`:`<ellipse cx="61" cy="73" rx="${cat.face===2?7.6:6}" ry="${cat.face===1?5:8}" fill="${ey}"/><ellipse cx="94" cy="73" rx="${cat.face===2?7.6:6}" ry="${cat.face===1?5:8}" fill="${ey}"/><ellipse cx="61" cy="74" rx="2" ry="6" fill="#322e34"/><ellipse cx="94" cy="74" rx="2" ry="6" fill="#322e34"/><circle cx="59" cy="70" r="1.8" fill="white"/><circle cx="92" cy="70" r="1.8" fill="white"/>`;
+ const joy=well?`<g fill="#f3c7a1"><circle cx="46" cy="88" r="6"/><circle cx="108" cy="88" r="6"/></g><g fill="#fff8b1"><path d="M24 38l3 7 8 2-8 3-3 8-3-8-8-3 8-2Z"/><path d="M125 30l2 7 8 2-8 2-2 7-2-7-8-2 8-2Z"/></g>`:'';
+ const ears=cat.ears===0?'M42 53 36 18Q34 10 45 20L62 37Z':'M42 54 30 26Q26 17 42 23L62 41Z';
+ const ears2=cat.ears===2?'M90 37 107 27Q124 20 118 38L113 56Z':'M90 38 107 19Q119 8 118 24L114 56Z';
+ return `<svg viewBox="0 0 154 154" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><ellipse cx="77" cy="143" rx="48" ry="7" fill="#b2928c26"/>
+ <path d="M105 112Q${cat.tail%2?157:132} ${cat.tail>1?142:77} ${cat.tail%2?117:147} 81" stroke="${fur}" stroke-width="18" fill="none" stroke-linecap="round"/>
+ <ellipse cx="76" cy="111" rx="48" ry="37" fill="${fur}" transform="translate(${77*(1-bodyScale)} ${116*(1-bodyScale)}) scale(${bodyScale})"/>
+ <path d="${ears}" fill="${fur}" stroke="${dark}" stroke-width="1.4"/><path d="${ears2}" fill="${fur}" stroke="${dark}" stroke-width="1.4"/>
+ <path d="M41 46L38 26 55 41Z" fill="#e9a6af"/><path d="M100 41L115 26 111 47Z" fill="#e9a6af"/>
+ <path d="M76 35C101 29 116 45 117 70 120 99 103 118 76 119 50 119 36 97 37 72 38 51 51 37 76 35" fill="${fur}" stroke="${dark}" stroke-width="1.2"/>
+ ${patch}${stripes}${spots}${whitelap}${dirt}${frizz}
+ <ellipse cx="76" cy="91" rx="18" ry="15" fill="${light}" opacity=".95"/>${eyes}
+ <path d="M71 86q5-4 11 0l-6 5Z" fill="#cd858c"/><path d="M76 90q-3 9-10 5m10-5q3 9 10 5" stroke="#66525a" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+ <g stroke="#806a6c" stroke-width="1.35" stroke-linecap="round"><path d="M48 90 24 86m24 9-27 2m24 2-21 9M105 90l24-4m-24 9 27 2m-24 2 21 9"/></g>
+ <ellipse cx="49" cy="132" rx="16" ry="10" fill="${fur}"/><ellipse cx="99" cy="132" rx="16" ry="10" fill="${fur}"/>
+ ${well?`<path d="M64 113l12 6 12-6-3 20-9 5-9-5Z" fill="#e48ea5"/><circle cx="76" cy="124" r="3" fill="#fff1a0"/>`:''}${joy}
+ ${ill?'<path d="M118 50l8-5" stroke="#9c888c" stroke-width="3"/>':''}
+ </svg>`;
+}
+function meter(value){return `<div class="meter" style="--meter:${Math.round(value)}%;--color:${barColor(value)}"><i></i></div>`}
+function needMessage(c){let min=NEEDS.reduce((a,b)=>c.stats[a.key]<c.stats[b.key]?a:b);return `${min.icon} ${min.short.toLowerCase()}`}
+function average(c){return NEEDS.reduce((s,n)=>s+c.stats[n.key],0)/NEEDS.length}
+class Game{
+ constructor(){this.s=null;this.tab='room';this.selectedId=null;this.chosen='mila';this.loop=null;this.elapsed=0;this.adBusy=false;this.toastTimer=null;this.adoptTimer=null;this.session=0;this.initUI();this.renderStart()}
+ initUI(){
+  $('caretakerList').addEventListener('click',e=>{const card=e.target.closest('[data-caretaker]');if(card){this.chosen=card.dataset.caretaker;this.renderStart()}});
+  $('startBtn').addEventListener('click',()=>this.newGame());$('resumeBtn').addEventListener('click',()=>this.resume());
+  $('helpButton').addEventListener('click',()=>this.showHelp());
+  document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>this.setTab(b.dataset.tab)));
+  $('content').addEventListener('click',e=>this.dispatch(e));$('sheet').addEventListener('click',e=>this.dispatch(e));
+  $('sheetOverlay').addEventListener('click',e=>{if(e.target===$('sheetOverlay'))this.closeSheet()});
+  $('modal').addEventListener('click',e=>this.dispatch(e));
+  $('adoptToast').addEventListener('click',e=>this.dispatch(e));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('sheetOverlay').hidden)this.closeSheet()});
+  $('heroArt').innerHTML=[0,3,2].map((p,i)=>`<div class="hero-cat">${svgCat({id:i,palette:p,pattern:i===1?2:i,eye:i+1,ears:0,tail:i,face:0,size:0,baby:false,stats:{food:100,health:100,hygiene:100,coat:100},before:{food:100,health:100,hygiene:100,coat:100}},'now',`hero${i}`)}</div>`).join('');
+ }
+ renderStart(){
+  $('caretakerList').innerHTML=CHARACTERS.map(c=>`<button class="caretaker ${this.chosen===c.id?'is-selected':''}" data-caretaker="${c.id}" aria-pressed="${this.chosen===c.id}"><span class="portrait">${c.emoji}</span><span><strong>${c.name}</strong><small>${c.bonus}</small></span></button>`).join('');
+  let has=false;try{const saved=JSON.parse(localStorage.getItem(KEY));has=!!(saved&&saved.version===5&&!saved.closed)}catch(e){}
+  $('resumeBtn').hidden=!has;
+ }
+ newGame(){this.session++;this.selectedId=null;this.tab='room';this.clearModals();const id=this.chosen;this.s={version:5,caretaker:id,money:260,day:1,seconds:0,nextArrival:46,cats:[],idSeq:1,capacity:4,rooms:1,clean:86,risk:0,adopted:0,totalDonated:0,totalSpent:0,staff:[],history:[],logs:[],closed:false,adoptToast:null,lastAdoptReward:null,lastAdvertAt:0,levelNotified:0};
+  for(let i=0;i<3;i++)this.addCat(false,true);this.ledger('Приют открыт! Стартовый бюджет',260,false);this.enter();this.info('🚪 Волонтёры привели первых трёх котиков!')}
+ resume(){try{const data=JSON.parse(localStorage.getItem(KEY));if(!data||data.version!==5||data.closed)throw new Error('No save');this.s=data;this.session++;this.selectedId=null;this.tab='room';this.clearModals();this.enter();this.info('🏡 Добро пожаловать обратно!')}catch(e){this.info('Не удалось открыть сохранение');this.renderStart()}}
+ enter(){$('startScreen').hidden=true;$('gameScreen').hidden=false;this.render();if(this.loop)clearInterval(this.loop);this.loop=setInterval(()=>this.tick(),1000);this.save()}
+ caretaker(){return CHARACTERS.find(c=>c.id===this.s.caretaker)||CHARACTERS[0]}
+ addCat(baby=false,initial=false,base=null){if(this.s.cats.length>=MAX_CATS)return false;const cat=createCat(this.s.idSeq++,this.s.day,baby,base);cat.beforeFleas=cat.fleas;this.s.cats.push(cat);if(!initial){const kind=baby?'котёнок':'новый котик';this.ledger(`${cat.name}: ${kind} в приюте`,0,false);this.info(`🚪 ${baby?'В семье пополнение!':'Волонтёры принесли котика!'} ${cat.name} теперь у нас.`)}return cat}
+ newArrival(){if(this.s.cats.length>=MAX_CATS){this.lose('В приюте больше нет безопасного места даже для временного размещения.');return}this.addCat();this.s.nextArrival=Math.max(16,56-this.s.day*2.8)+randint(-5,5);this.save()}
+ ledger(label,amount,count=true){this.s.logs.unshift({label,amount:Math.round(amount),day:this.s.day});if(this.s.logs.length>65)this.s.logs.pop();if(count){this.s.money+=Math.round(amount);if(amount>0)this.s.totalDonated+=Math.round(amount);else this.s.totalSpent+=Math.abs(Math.round(amount))}}
+ spend(amount,label){amount=Math.round(amount);if(this.s.money<amount){this.info('🪙 Не хватает средств. Пожертвования приходят ежедневно, а рекламу можно посмотреть в кассе.');return false}this.ledger(label,-amount);return true}
+ tick(){if(!this.s||this.s.closed||document.hidden||!$('modalOverlay').hidden||this.adBusy)return;this.s.seconds++;this.s.nextArrival-=1;
+  const count=this.s.cats.length,extra=Math.max(0,count-this.s.capacity);
+  this.s.clean=clamp(this.s.clean-(.17+count*.14+extra*.17));
+  for(const cat of this.s.cats){if(cat.leaving)continue;const v=cat.stats;
+   v.food=clamp(v.food-(.20+this.s.day*.012+extra*.09));v.hygiene=clamp(v.hygiene-(.12+count*.009+extra*.05));v.coat=clamp(v.coat-(.11+(v.hygiene<45?.11:0)));
+   v.health=clamp(v.health-(v.food<35?.24:.037)-(v.hygiene<25?.15:0)-(this.s.clean<28?.16:0)-(extra>0?.08:0));
+  }
+  if(this.s.seconds%7===0)this.staffWork();
+  if(this.s.seconds%DAY_SECONDS===0)this.nextDay();
+  if(this.s.nextArrival<=0)this.newArrival();
+  if(extra>0)this.s.risk=clamp(this.s.risk+1.9+extra*.6);else this.s.risk=clamp(this.s.risk-1.35);
+  if(this.s.clean<20)this.s.risk=clamp(this.s.risk+1.2);
+  if(this.s.money<0)this.s.risk=clamp(this.s.risk+.9);
+  if(this.s.risk>=100)this.lose('Инспекция закрыла приют из-за переполнения и условий содержания.');
+  else if(this.s.money<=-100)this.lose('Приют не смог оплатить необходимые расходы.');
+  else{this.checkReady();if(this.s.seconds%2===0)this.render();if(this.s.seconds%5===0)this.save()}
+ }
+ nextDay(){this.s.day++;
+  const count=this.s.cats.length,extras=Math.max(0,count-this.s.capacity);
+  const upkeep=count*5+extras*4+this.s.staff.reduce((total,id)=>total+(STAFF.find(x=>x.id===id)?.salary||0),0);
+  this.ledger(`Расходы: корм, коммунальные услуги и зарплаты`,-upkeep);
+  const cared=count?this.s.cats.reduce((sum,c)=>sum+average(c),0)/count:90;
+  const ratio=Math.min(1,this.s.capacity/Math.max(1,count));
+  let gift=(cared*.54+this.s.clean*.35+10)*ratio*this.caretaker().donation;
+  if(cared>75&&this.s.clean>70&&extras===0)gift+=38;
+  gift=Math.round(Math.max(0,gift));this.ledger('Пожертвования от жителей',gift);
+  if(gift>upkeep)this.info(`💌 День ${this.s.day}: пожертвования +${gift} 🪙, расходы −${upkeep} 🪙`);
+  else this.info(`📋 День ${this.s.day}: расходы −${upkeep} 🪙. Улучши условия для роста пожертвований.`);
+  // Some incoming adult cats may need extra space for a future litter. A preventive vet programme avoids surprise litters in this simplified game model.
+  for(const cat of [...this.s.cats]){
+   if(cat.vetRisk&&!cat.vetDone&&!cat.baby&&!cat.leaving&&cat.litterDay!==null&&this.s.day>=cat.litterDay){
+    cat.vetRisk=false;cat.litterDay=null;
+    const kittens=randint(2,3);let added=0;
+    for(let i=0;i<kittens;i++)if(this.addCat(true,true,{palette:cat.palette,pattern:cat.pattern}))added++;
+    if(added){this.ledger(`Неожиданный помёт у ${cat.name}: ${added} котёнка`,0,false);this.info(`🐾 У ${cat.name} появились котята (${added})! Теперь нужно больше места и корма.`)}
+   }
+  }
+  this.save();
+ }
+ staffWork(){for(const id of this.s.staff){const worker=STAFF.find(w=>w.id===id);if(!worker)continue;
+   if(id==='cleaner'){this.s.clean=clamp(this.s.clean+worker.gain);continue}
+   if(!this.s.cats.length)continue;
+   if(id==='groom'){let c=this.s.cats.filter(c=>!c.leaving).sort((a,b)=>Math.min(a.stats.hygiene,a.stats.coat)-Math.min(b.stats.hygiene,b.stats.coat))[0];if(!c)continue;const k=c.stats.hygiene<=c.stats.coat?'hygiene':'coat';c.stats[k]=clamp(c.stats[k]+worker.gain)}
+   else{let c=this.s.cats.filter(c=>!c.leaving).sort((a,b)=>a.stats[worker.field]-b.stats[worker.field])[0];if(c)c.stats[worker.field]=clamp(c.stats[worker.field]+worker.gain)}
+  }this.checkReady()}
+ checkReady(){for(const cat of this.s.cats){if(cat.leaving||cat.ready)continue;if(NEEDS.every(n=>cat.stats[n.key]>=80)&&this.s.clean>=35){cat.ready=true;const session=this.session;setTimeout(()=>{if(session===this.session&&this.s&&!this.s.closed)this.adopt(cat.id)},1500)}}}
+ adopt(id){const i=this.s.cats.findIndex(c=>c.id===id);if(i<0)return;const c=this.s.cats[i];if(c.leaving)return;c.leaving=true;
+  const session=this.session;
+  setTimeout(()=>{if(this.session!==session||!this.s||this.s.closed)return;const idx=this.s.cats.findIndex(x=>x.id===id);if(idx<0)return;
+   this.s.cats.splice(idx,1);this.s.adopted++;
+   const reward=85+Math.min(35,this.s.day*2);this.ledger(`${c.name} нашёл семью`,reward);
+   this.s.history.unshift({...c,owner:pick(OWNER),adoptDay:this.s.day});this.s.history=this.s.history.slice(0,100);
+   this.s.adoptToast={name:c.name,owner:this.s.history[0].owner,reward,claimable:true};
+   if(this.selectedId===c.id)this.selectedId=null;
+   this.playChime();this.render();this.save();
+   if(this.s.adopted%5===0&&this.s.levelNotified!==Math.floor(this.s.adopted/5)){
+    this.s.levelNotified=Math.floor(this.s.adopted/5);this.showModal('🎉',`Этап ${this.s.levelNotified} пройден!`,`Уже ${this.s.adopted} котиков обрели семью. Приют становится известнее — новые питомцы будут поступать чаще.`,[{label:'Продолжить',action:'next-level',cls:'btn-rose'}]);
+   }
+  },700);
+ }
+ action(catId,key){const c=this.s.cats.find(x=>x.id===catId);const n=NEEDS.find(x=>x.key===key);if(!c||!n||c.leaving||c.ready)return;
+  if(c.stats[key]>=99){this.info('Здесь всё хорошо — лучше помоги с другими потребностями.');return}
+  if(!this.spend(n.cost,`${c.name}: ${n.short.toLowerCase()}`))return;
+  const before=c.stats[key];c.stats[key]=clamp(c.stats[key]+n.gain*(key==='health'?this.caretaker().heal:1));
+  if(key==='hygiene')c.stats.coat=clamp(c.stats.coat+6);
+  this.checkReady();this.info(`${n.icon} ${c.name}: ${n.name.toLowerCase()} ${Math.round(before)}% → ${Math.round(c.stats[key])}%`);this.render();this.save();
+ }
+ clean(){if(!this.spend(14,'Уборка лотков и комнаты'))return;this.s.clean=clamp(this.s.clean+49);this.s.risk=clamp(this.s.risk-6);this.info('🧹 В комнате стало чище, котикам легче дышать!');this.checkReady();this.render();this.save()}
+ vet(catId){const c=this.s.cats.find(c=>c.id===catId);if(!c||c.vetDone||c.baby||c.ready)return;
+  if(!this.spend(25,`${c.name}: ветеринарная программа`))return;c.vetDone=true;c.vetRisk=false;c.litterDay=null;c.stats.health=clamp(c.stats.health+18);this.info(`🩺 Для ${c.name} проведена ветпрограмма — неожиданного пополнения не будет.`);this.checkReady();this.render();this.save();
+ }
+ expand(){let cost=this.expandCost();if(!this.spend(cost,'Расширение приюта на 3 места'))return;this.s.capacity+=3;this.s.rooms++;this.s.risk=clamp(this.s.risk-20);this.info('🏡 Ура! Появилась ещё одна комната: +3 места.');this.render();this.save()}
+ expandCost(){return Math.round((150+(this.s.rooms-1)*90)*this.caretaker().upgrade)}
+ hire(id){const w=STAFF.find(w=>w.id===id);if(!w||this.s.staff.includes(id))return;const cost=Math.round(w.cost*this.caretaker().staff);if(!this.spend(cost,`Нанят сотрудник: ${w.name}`))return;this.s.staff.push(id);this.info(`${w.icon} ${w.name} присоединился к команде!`);this.render();this.save()}
+ async reward(type){if(this.adBusy)return;let label=type==='donate'?'+120 монет':type==='double'?'удвоенное пожертвование':'экстренная уборка';const pendingAdoption=this.s?.adoptToast?.name;this.adBusy=true;this.info('📺 Открываем рекламу…');
+  let ok=false;try{if(window.ShelterAds&&typeof window.ShelterAds.rewarded==='function')ok=await window.ShelterAds.rewarded(type);else{console.log('Ad Triggered (browser demo)',type);ok=true}}catch(e){console.warn('Ads unavailable',e)}
+  this.adBusy=false;if(!ok){this.info('Реклама недоступна или просмотр не завершён. Награда не начислена.');return}
+  if(!this.s||this.s.closed)return;
+  if(type==='donate')this.ledger('Награда за просмотр рекламы',120);
+  if(type==='clean'){this.s.clean=clamp(this.s.clean+55);this.s.risk=clamp(this.s.risk-9);this.ledger('Бонус: экстренная уборка',0,false)}
+  if(type==='double'&&this.s.adoptToast?.claimable&&this.s.adoptToast.name===pendingAdoption){const reward=this.s.adoptToast.reward;this.ledger(`Дополнительное пожертвование за ${this.s.adoptToast.name}`,reward);this.s.adoptToast.claimable=false;this.hideAdoptToast()}
+  this.info(`🎁 Бонус получен: ${label==='экстренная уборка'?'уборка завершена':label}`);this.render();this.save();
+ }
+ async nextLevel(){this.hideModal();if(window.ShelterAds&&typeof window.ShelterAds.interstitial==='function'&&this.s.levelNotified%2===0){this.adBusy=true;try{await window.ShelterAds.interstitial()}catch(e){console.warn('Interstitial',e)}this.adBusy=false}this.render()}
+ lose(reason){if(!this.s||this.s.closed)return;this.s.closed=true;this.save();this.closeSheet();this.showModal('🚨','Приют временно закрыт',`${reason} За ${this.s.day} дней вы помогли ${this.s.adopted} котикам. Попробуйте ещё раз — расширяйте комнаты и нанимайте помощников заранее.`,[{label:'Начать заново',action:'restart',cls:'btn-rose'},{label:'На главный экран',action:'home',cls:'btn-light'}])}
+ showHelp(){this.showModal('🐾','Как играть','Кликайте на котиков в общей комнате. Кормите, лечите, мойте и вычёсывайте их до зелёного уровня (80% по каждому показателю). Затем их заберёт семья. Убирайте лотки, следите за местами и деньгами. С каждым днём котиков привозят чаще. Для предотвращения неожиданного помёта есть ветеринарная программа. Пожертвования выше в чистом и ухоженном приюте.',[{label:'Понятно!',action:'close-modal',cls:'btn-rose'}])}
+ showModal(icon,title,message,buttons){$('modal').innerHTML=`<span class="bigemoji">${icon}</span><h2>${esc(title)}</h2><p>${esc(message)}</p>${buttons.map(b=>`<button class="btn ${b.cls||'btn-light'}" data-do="${b.action}">${esc(b.label)}</button>`).join('')}`;$('modalOverlay').hidden=false}
+ hideModal(){$('modalOverlay').hidden=true}
+ info(message){const el=$('toast');el.textContent=message;el.hidden=false;clearTimeout(this.toastTimer);this.toastTimer=setTimeout(()=>{el.hidden=true},3200)}
+ playChime(){try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)return;const ctx=new Audio();const now=ctx.currentTime;[659,880].forEach((f,i)=>{let osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='sine';osc.frequency.value=f;gain.gain.setValueAtTime(.0001,now+i*.12);gain.gain.exponentialRampToValueAtTime(.045,now+i*.12+.025);gain.gain.exponentialRampToValueAtTime(.0001,now+i*.12+.2);osc.connect(gain);gain.connect(ctx.destination);osc.start(now+i*.12);osc.stop(now+i*.12+.21)});setTimeout(()=>ctx.close(),550)}catch(e){}}
+ save(){if(!this.s)return;try{localStorage.setItem(KEY,JSON.stringify(this.s))}catch(e){console.warn('Save unavailable',e)}}
+ clearModals(){$('modalOverlay').hidden=true;$('sheetOverlay').hidden=true;$('adoptToast').hidden=true}
+ setTab(tab){if(!this.s)return;this.tab=tab;this.closeSheet();this.render(true)}
+ openSheet(id){const c=this.s.cats.find(x=>x.id===id);if(!c||c.leaving)return;this.selectedId=id;$('sheetOverlay').hidden=false;this.renderSheet();}
+ closeSheet(){this.selectedId=null;$('sheetOverlay').hidden=true}
+ hideAdoptToast(){if(this.s)this.s.adoptToast=null;$('adoptToast').hidden=true}
+ dispatch(e){const node=e.target.closest('[data-do],[data-cat]');if(!node)return;
+  if(node.dataset.cat){this.openSheet(Number(node.dataset.cat));return}
+  const action=node.dataset.do;
+  if(action==='close-sheet')this.closeSheet();else if(action==='close-modal')this.hideModal();else if(action==='help')this.showHelp();
+  else if(action==='restart')this.newGame();else if(action==='home'){this.hideModal();if(this.loop)clearInterval(this.loop);this.session++;this.s=null;$('gameScreen').hidden=true;$('startScreen').hidden=false;this.renderStart()}
+  else if(action==='next-level')this.nextLevel();else if(action==='clean')this.clean();else if(action==='expand')this.expand();else if(action==='privacy'){if(window.ShelterAds?.privacyOptions)window.ShelterAds.privacyOptions();else this.info('Настройки рекламы доступны в мобильном приложении после подключения AdMob.');}
+  else if(action==='hire')this.hire(node.dataset.id);else if(action==='care')this.action(Number(node.dataset.id),node.dataset.key);
+  else if(action==='vet')this.vet(Number(node.dataset.id));else if(action==='reward')this.reward(node.dataset.reward);
+  else if(action==='hide-adopt')this.hideAdoptToast();else if(action==='reset'){this.showModal('🔄','Начать заново?','Текущий прогресс будет потерян. Сохранённую игру нельзя восстановить.',[{label:'Да, новый приют',action:'restart',cls:'btn-rose'},{label:'Отмена',action:'close-modal',cls:'btn-light'}])}
+ }
+ render(resetScroll=false){if(!this.s)return;
+  $('moneyValue').textContent=`🪙 ${fmt(this.s.money)}`;$('playerPic').textContent=this.caretaker().emoji;
+  $('dayValue').textContent=String(this.s.day);$('capacityValue').textContent=`${this.s.cats.length} / ${this.s.capacity}`;$('adoptedValue').textContent=String(this.s.adopted);$('arrivalsValue').textContent=timeFmt(this.s.nextArrival);
+  $('riskFill').style.width=`${this.s.risk}%`;$('riskValue').textContent=`${Math.round(this.s.risk)}%`;
+  let b=$('capacityValue').parentElement;b.classList.toggle('statusbox-danger',this.s.cats.length>this.s.capacity);
+  document.querySelectorAll('[data-tab]').forEach(n=>n.classList.toggle('active',n.dataset.tab===this.tab));
+  const box=$('content'),position=resetScroll?0:box.scrollTop;
+  box.innerHTML=this.tab==='room'?this.renderRoom():this.tab==='team'?this.renderTeam():this.tab==='album'?this.renderAlbum():this.renderCash();box.scrollTop=position;
+  if(!$('sheetOverlay').hidden)this.renderSheet();this.renderAdoptToast();
+ }
+ renderRoom(){const s=this.s,extra=Math.max(0,s.cats.length-s.capacity);
+  let warning=extra?`<div class="banner danger">🚨 <strong>Переполнение: лишних котиков ${extra}!</strong> Риск закрытия растёт каждую секунду. Усыновите готовых котиков или расширьте помещение.</div>`:s.risk>45?`<div class="banner warning">⚠️ Инспекция беспокоится. Улучшите чистоту и освободите места, пока приют открыт.</div>`:`<div class="banner good">💚 Котики в одной комнате. Улучшайте их показатели до зелёного цвета — тогда приедут новые хозяева.</div>`;
+  return `${warning}${s.clean<35?'<div class="banner warning">🧹 Лотки давно не убирали! Новые семьи не приедут за котиками, пока не станет чище.</div>':''}<div class="sectionhead"><h2>Общая комната 🐈</h2><small>${s.cats.length} питомцев · ${s.rooms} комн.</small></div>
+   <div class="room"><div class="room-head"><div class="window"></div><div class="room-cozy">🪴 🧶 🐾</div></div>
+   <div class="roomcats">${s.cats.map(c=>{const avg=average(c),col=barColor(avg);const stage=c.ready?'Дом найден!':avg>=80?'Счастлив 🟢':avg>=52?'Нужна забота':'Нужна помощь 🔴';return `<button class="cat ${c.ready?'ready':''} ${c.leaving?'leaving':''}" data-cat="${c.id}" aria-label="${esc(c.name)}, состояние ${Math.round(avg)} процентов. Открыть уход.">
+    <div class="catbar" style="--bar-color:${col};--bar-width:${Math.round(avg)}%"><i></i></div><span class="catstate" style="--state-color:${col}">${stage} · ${Math.round(avg)}%</span>
+    <div class="cat-art">${svgCat(c,'now','room')}</div><strong class="catname">${esc(c.name)}${c.baby?' 🍼':''}</strong><small class="catneed">${c.ready?'🏡 За ним едет семья':needMessage(c)}</small></button>`}).join('')}</div>
+   <div class="litter-scene"><span class="litter-icon">${s.clean>=75?"✨🧺":s.clean>=40?"🧺🧻":"💩🧺"}</span><span>${s.clean>=75?"Лотки чистые — котикам хорошо!":s.clean>=40?"Лотки пора почистить":"Очень грязно! Срочно нужна уборка"}</span></div><div class="room-people">${this.caretaker().emoji} ${s.staff.map(id=>STAFF.find(w=>w.id===id)?.icon||"").join(" ")} <small>${esc(this.caretaker().name)} и команда приюта</small></div><div class="room-footer">🌱 Нажми на любого котика, чтобы позаботиться о нём</div></div>
+   <div class="cleanbox"><div class="broom">🧹</div><div class="clean-main"><div class="clean-title">Лотки и общая комната · ${Math.round(s.clean)}%</div>${meter(s.clean)}</div><button class="mini-btn" data-do="clean" ${s.money<14?'disabled':''}>Убрать · 14 🪙</button></div>
+   <div class="newcomer"><span class="emoji">🚪</span><div><strong>Следующий котик через ${timeFmt(s.nextArrival)}</strong><small>Волонтёры привозят питомцев всё чаще. Мест: ${s.capacity}, сейчас: ${s.cats.length}.</small></div></div>
+   <p class="caution">Котики остаются в приюте, пока им нужна помощь. Когда все четыре показателя зелёные, их забирают в любящую семью. Пожертвования приходят в конце каждого игрового дня.</p>`;
+ }
+ renderSheet(){const c=this.s.cats.find(c=>c.id===this.selectedId);if(!c){this.closeSheet();return}
+ const node=$('sheet');const old=node.scrollTop,avg=average(c),v=c.stats;
+ node.innerHTML=`<div class="sheethead"><div><h2>${esc(c.name)} ${c.baby?'🍼':''}</h2><small>${COLORS[c.palette][3]} · ${PATTERNS[c.pattern].toLowerCase()} · ${c.baby?'котёнок':'взрослый котик'} · день ${c.arrival}</small></div><button class="closebtn" data-do="close-sheet" aria-label="Закрыть карточку">✕</button></div>
+ <div class="compare"><div class="comparebox"><span>БЫЛО 😿</span>${svgCat(c,'before','before')}<small class="comparrow">При поступлении</small></div><div class="comparebox now"><span>СТАЛО ${avg>=80?'😻':'🐱'}</span>${svgCat(c,'now','detail')}<small class="comparrow">Сейчас · ${Math.round(avg)}% заботы</small></div></div>
+ <div class="needs">${NEEDS.map(n=>`<div class="needline"><span>${n.icon} ${n.name}</span>${meter(v[n.key])}<b>${Math.round(v[n.key])}%</b></div>`).join('')}</div>
+ ${c.ready?`<div class="banner good space">🏡 Все показатели зелёные! За ${esc(c.name)} уже едет новая семья.</div>`:`<div class="actions">${NEEDS.map(n=>`<button class="action ${v[n.key]<75?'recommended':''}" data-do="care" data-id="${c.id}" data-key="${n.key}" ${this.s.money<n.cost?'disabled':''}><span>${n.icon}</span><b>${n.short}</b><small>+${Math.round(n.gain*(n.key==='health'?this.caretaker().heal:1))}% · −${n.cost} 🪙</small></button>`).join('')}</div>`}
+ ${!c.baby?`<div class="vetbox"><span style="font-size:25px">🩺</span><div><strong>${c.vetDone?'Ветпрограмма проведена ✅':'Ветеринарная программа'}</strong><small>${c.vetDone?'Неожиданное пополнение не грозит':'Помогает предупредить неожиданное появление котят и улучшает здоровье'}</small></div>${c.vetDone?'':`<button class="mini-btn" data-do="vet" data-id="${c.id}" ${this.s.money<25||c.ready?'disabled':''}>25 🪙</button>`}</div>`:`<div class="vetbox">🍼 <div><strong>Котёнок</strong><small>Нуждается в уходе и более спокойной обстановке</small></div></div>`}
+ <div class="footer-note">Красивая шерсть, чистая мордочка и довольные глазки появятся после ухода ✨</div>`;
+ node.scrollTop=old;
+ }
+ renderTeam(){const s=this.s;
+  return `<div class="sectionhead"><h2>Развитие приюта 🏡</h2><small>${s.capacity} мест</small></div>
+   <div class="card"><div class="card-head"><div class="card-emoji">🏠</div><div><h3>Построить дополнительную комнату</h3><p>+3 места. Больше котиков смогут дождаться своей семьи без тесноты.</p><span class="stafftag">Сейчас: ${s.rooms} комнат(ы)</span></div></div><div class="staff-foot"><strong>−${this.expandCost()} 🪙</strong><button class="btn btn-rose smallbtn" data-do="expand" ${s.money<this.expandCost()?'disabled':''}>Расширить · +3 места</button></div></div>
+   <div class="sectionhead space"><h2>Нанять помощников 👩‍⚕️</h2><small>${s.staff.length}/4</small></div>
+   <div class="banner">Помощники заботятся о котиках автоматически каждые 7 секунд, но каждый день получают зарплату из кассы приюта.</div>
+   ${STAFF.map(w=>{const hired=s.staff.includes(w.id),cost=Math.round(w.cost*this.caretaker().staff);return `<div class="card"><div class="card-head"><div class="card-emoji">${w.icon}</div><div><h3>${w.name}</h3><p>${w.desc}</p>${hired?'<span class="stafftag">В команде ✓</span>':''}</div></div><div class="staff-foot"><span><strong>${hired?'Нанят':`−${cost} 🪙`}</strong><br><small>Зарплата ${w.salary} 🪙/день</small></span><button class="btn ${hired?'btn-mint':'btn-light'} smallbtn" data-do="hire" data-id="${w.id}" ${hired||s.money<cost?'disabled':''}>${hired?'Работает':'Нанять'}</button></div></div>`}).join('')}
+   <div class="footer-note">Команда не заменяет заботу игрока, но помогает справляться с наплывом новых котиков.</div>`;
+ }
+ renderAlbum(){const s=this.s;return `<div class="sectionhead"><h2>Истории счастливых котиков 📸</h2><small>${s.adopted} усыновлено</small></div>
+  <div class="banner good">💚 Каждому котику нужен дом, а каждой истории — счастливый финал. Здесь сохраняются последние 100 усыновлений.</div>
+  ${s.history.length?`<div class="album">${s.history.map(c=>`<div class="album-card"><div class="album-art">${svgCat(c,'now',`album${c.id}`)}</div><strong>${esc(c.name)} ${c.owner}</strong><small>Новый дом · день ${c.adoptDay}</small></div>`).join('')}</div>`:`<div class="empty">📸<br><br>Здесь будут появляться фотографии котиков, которым ты помог найти семью.</div>`}`;
+ }
+ renderCash(){const s=this.s,count=s.cats.length,upkeep=count*5+s.staff.reduce((n,id)=>n+(STAFF.find(w=>w.id===id)?.salary||0),0);
+  return `<div class="sectionhead"><h2>Касса приюта 🪙</h2><small>День ${s.day}</small></div>
+   <div class="info-grid"><div class="infobox"><b>🪙 ${fmt(s.money)}</b><small>Текущий баланс</small></div><div class="infobox"><b>−${upkeep} 🪙</b><small>Примерные расходы за день</small></div><div class="infobox"><b>+${fmt(s.totalDonated)} 🪙</b><small>Все поступления</small></div><div class="infobox"><b>−${fmt(s.totalSpent)} 🪙</b><small>Все расходы</small></div></div>
+   <div class="card space"><h3 style="margin:0 0 5px">💌 Откуда приходят пожертвования</h3><p style="font-size:11px;color:var(--soft);line-height:1.5;margin:0">Жители больше помогают чистому и ухоженному приюту, особенно если котики сыты и здоровы. Пожертвования начисляются в конце игрового дня.</p></div>
+   <div class="sectionhead space"><h2>Поддержка за рекламу 📺</h2><small>По желанию</small></div>
+   <div class="shop-call"><strong style="font-size:13px">🎁 Спасательный фонд · +120 🪙</strong><p style="font-size:11px;color:var(--soft);margin:6px 0">Смотри короткую рекламу и получай игровые монеты. Работает и без покупок.</p><button class="btn btn-mint" data-do="reward" data-reward="donate" ${this.adBusy?'disabled':''}>📺 Посмотреть рекламу · +120 🪙</button></div>
+   <div class="shop-call"><strong style="font-size:13px">🧼 Экстренная помощь с уборкой</strong><p style="font-size:11px;color:var(--soft);margin:6px 0">Одним просмотром улучшает чистоту на 55% и снижает риск закрытия.</p><button class="btn btn-light" data-do="reward" data-reward="clean" ${this.adBusy?'disabled':''}>📺 Посмотреть рекламу · уборка</button></div>
+   <div class="sectionhead space"><h2>Финансовая история</h2><small>Последние операции</small></div>
+   <div class="card">${s.logs.slice(0,25).map(x=>`<div class="logentry"><span><time>День ${x.day}</time><br>${esc(x.label)}</span><b class="${x.amount<0?'debit':'credit'}">${x.amount===0?'—':`${x.amount>0?'+':'−'}${fmt(Math.abs(x.amount))} 🪙`}</b></div>`).join('')}</div>
+   <button class="btn btn-light" data-do="privacy" style="width:100%;margin-top:8px">🔐 Настройки конфиденциальности</button><button class="btn btn-light" data-do="reset" style="width:100%;margin-top:8px">🔄 Начать новую игру</button><p class="footer-note">Демо в браузере выдаёт рекламные бонусы без видео. В Яндекс Играх и мобильных приложениях награда зависит от подтверждённого просмотра рекламы.</p>`;
+ }
+ renderAdoptToast(){const s=this.s;if(!s?.adoptToast){$('adoptToast').hidden=true;return}const a=s.adoptToast;
+  $('adoptToast').innerHTML=`<button class="x" data-do="hide-adopt" aria-label="Закрыть">✕</button><span class="paw">${a.owner}</span><div class="info"><strong>🏡 ${esc(a.name)} нашёл дом! +${a.reward} 🪙</strong><small>${a.claimable?'Можно удвоить подарок от семьи за просмотр рекламы.':'Поздравляем с усыновлением!'} </small></div>${a.claimable?'<button class="mini-btn" data-do="reward" data-reward="double">📺 ×2</button>':''}`;
+  $('adoptToast').hidden=false;
+ }
+}
+
+/* ============== V6: visible walking cats, shop and Google Play purchases ============== */
+const ACCOUNT_KEY='lapki-dobra-purchase-wallet-v6';
+const SHOP={
+ food:{name:'Большая пачка корма',icon:'🐟',desc:'7 порций. На каждое кормление уйдёт одна порция вместо монет.',price:32,qty:7},
+ shampoo:{name:'Нежный шампунь',icon:'🧴',desc:'5 купаний. Снимает грязь и помогает шерсти выглядеть лучше.',price:36,qty:5},
+ flea:{name:'Средство от блох',icon:'🩹',desc:'3 обработки. Убирает паразитов и помогает восстановить здоровье.',price:45,qty:3},
+ litter:{name:'Набор для уборки',icon:'🧹',desc:'4 бесплатные по игровым монетам уборки общей комнаты.',price:35,qty:4},
+ bed:{name:'Мягкая лежанка',icon:'🛏️',desc:'Постоянно остаётся в комнате. Отдыхающие котики быстрее восстанавливаются.',price:110,qty:1},
+ brush:{name:'Хорошая расчёска',icon:'🪮',desc:'Многоразовая. Даёт +20% к результату вычёсывания.',price:95,qty:1},
+ toy:{name:'Набор игрушек',icon:'🧶',desc:'Постоянное украшение комнаты. Игры немного улучшают шерсть.',price:75,qty:1}
+};
+const PREMIUM={
+ shelter_supply_box:{name:'Большой набор заботы',icon:'🎁',desc:'12 кормов, 8 шампуней, 5 обработок от блох и 5 наборов для уборки.',consumable:true,supplies:{food:12,shampoo:8,flea:5,litter:5}},
+ shelter_beds_3:{name:'Три уютные лежанки',icon:'🛏️',desc:'Три дополнительные лежанки в комнаты приюта. Покупку можно повторить.',consumable:true,beds:3},
+ shelter_groomer_kit:{name:'Набор профессионального грумера',icon:'🪮',desc:'Постоянная расчёска, дополнительно 12 шампуней.',consumable:false,brush:true,supplies:{shampoo:12}},
+ shelter_rescue_box:{name:'Экстренный запас',icon:'🚑',desc:'7 порций корма, 6 обработок от блох, 3 набора для уборки.',consumable:true,supplies:{food:7,flea:6,litter:3}}
+};
+const EXTRA_CARE_TO_STOCK={food:'food',hygiene:'shampoo'};
+const baseEnter=Game.prototype.enter,baseTick=Game.prototype.tick,baseDispatch=Game.prototype.dispatch;
+const baseRender=Game.prototype.render,baseClean=Game.prototype.clean,baseNewGame=Game.prototype.newGame;
+Game.prototype.wallet=function(){
+ if(!this._wallet){let w={tokens:[],supplies:{food:0,shampoo:0,flea:0,litter:0},beds:0,brush:false};
+ try{const saved=JSON.parse(localStorage.getItem(ACCOUNT_KEY));if(saved&&typeof saved==='object'){w.tokens=Array.isArray(saved.tokens)?saved.tokens:[];w.supplies={...w.supplies,...(saved.supplies||{})};w.beds=Number(saved.beds)||0;w.brush=!!saved.brush}}catch(e){}
+ this._wallet=w}return this._wallet;
+};
+Game.prototype.saveWallet=function(){try{localStorage.setItem(ACCOUNT_KEY,JSON.stringify(this.wallet()))}catch(e){console.warn('Wallet storage unavailable',e)}};
+Game.prototype.ensureV6=function(){if(!this.s)return;this.wallet();this.s.inventory??={food:0,shampoo:0,flea:0,litter:0};this.s.furniture??={beds:0,brush:false,toys:0};this.s.cats.forEach(c=>{if(c.fleas===undefined)c.fleas=Math.random()<.25;if(c.beforeFleas===undefined)c.beforeFleas=c.fleas})};
+Game.prototype.stock=function(item){this.ensureV6();return Number(this.s.inventory[item]||0)+Number(this.wallet().supplies[item]||0)};
+Game.prototype.consumeStock=function(item){this.ensureV6();if(this.s.inventory[item]>0){this.s.inventory[item]--;return true}if(this.wallet().supplies[item]>0){this.wallet().supplies[item]--;this.saveWallet();return true}return false};
+Game.prototype.hasBrush=function(){this.ensureV6();return this.s.furniture.brush||this.wallet().brush};
+Game.prototype.bedCount=function(){this.ensureV6();return this.s.furniture.beds+this.wallet().beds};
+Game.prototype.buyGood=function(item){this.ensureV6();const d=SHOP[item];if(!d)return;if(item==='brush'&&this.hasBrush()){this.info('🪮 Расчёска уже в приюте!');return}
+ if(!this.spend(d.price,`Магазин: ${d.name}`))return;
+ if(item==='bed')this.s.furniture.beds++;else if(item==='brush')this.s.furniture.brush=true;else if(item==='toy')this.s.furniture.toys++;else this.s.inventory[item]+=d.qty;
+ this.info(`${d.icon} Покупка готова: ${d.name}`);this._sceneSignature='';this.render();this.save();};
+Game.prototype.buyPremium=async function(id){if(this.purchaseBusy)return;const item=PREMIUM[id];if(!item)return;const bill=window.ShelterBilling;
+ if(!bill?.isAvailable){this.info('Покупки за реальные деньги доступны только в приложении Android из Google Play.');return}
+ if(!item.consumable&&this.wallet().brush){this.info('Этот набор уже куплен');return}
+ if(!this.googleProducts?.[id]){this.info('Товар пока не доступен в Google Play. Проверьте настройки магазина.');return}
+ this.purchaseBusy=true;try{await bill.purchase(id);this.info('Ожидаем ответ от Google Play…')}catch(e){this.info('Покупка не завершена: '+(e?.message||'неизвестная ошибка'))}finally{this.purchaseBusy=false;this.render()}
+};
+Game.prototype.grantPurchase=async function(result){const token=result?.token,id=result?.productId,p=PREMIUM[id],bill=window.ShelterBilling;
+ if(!p||!token||result.state!=='PURCHASED'||!bill)return;
+ this._pendingTokenTasks??=new Set();if(this._pendingTokenTasks.has(token))return;this._pendingTokenTasks.add(token);
+ try{
+  const w=this.wallet();
+  if(!w.tokens.includes(token)){
+   /* IMPORTANT: test local verification is NOT acceptable for production release.
+      Real purchases need server verification via Google Play Developer API and
+      server-side transaction idempotency before entitlements are granted. */
+   const verified=await bill.verifyPurchase(result);
+   if(!verified){this.info('Покупка ожидает подтверждения. Попробуйте восстановить позже.');return}
+   if(p.supplies)Object.entries(p.supplies).forEach(([k,v])=>{w.supplies[k]=(w.supplies[k]||0)+v});
+   if(p.beds)w.beds+=p.beds;if(p.brush)w.brush=true;
+   w.tokens.push(token);this.saveWallet();this.info(`✅ Покупка «${p.name}» доставлена в приют!`);
+  }
+  // Only after persisting granted entitlements acknowledge / consume.
+  try{await bill.finish(token,p.consumable)}catch(e){console.warn('Finish purchase will retry on restore:',e)}
+  this._sceneSignature='';if(this.s)this.render();
+ }finally{this._pendingTokenTasks.delete(token)}
+};
+Game.prototype.loadBilling=async function(){const bill=window.ShelterBilling;if(!bill?.isAvailable)return;
+ if(!this._billingListener){this._billingListener=true;try{await bill.subscribe(event=>this.grantPurchase(event))}catch(e){console.warn('Purchase listener failed',e)}}
+ try{const products=await bill.getProducts();this.googleProducts=Object.fromEntries(products.map(p=>[p.productId,p]));if(this.s&&this.tab==='shop')this.render();
+  const pending=await bill.restore();for(const p of pending)await this.grantPurchase(p);
+ }catch(e){this.info('Не удалось связаться с Google Play: '+(e?.message||''))}
+};
+Game.prototype.enter=function(){this.activeRoom=1;this._sceneSignature='';this.ensureV6();baseEnter.call(this);
+ if(this.walkTimer)clearInterval(this.walkTimer);this.walkTimer=setInterval(()=>this.ambientWalk(),3150);this.loadBilling();};
+Game.prototype.newGame=function(){if(this.walkTimer)clearInterval(this.walkTimer);this.activeRoom=1;this._sceneSignature='';baseNewGame.call(this);this.ensureV6();this.s.cats.forEach(c=>c.beforeFleas=c.fleas);};
+Game.prototype.visibleCats=function(){this.ensureV6();const room=this.activeRoom||1;return this.s.cats.filter((c,i)=>{let assigned=i<4?1:2+Math.floor((i-4)/3);return Math.min(this.s.rooms,assigned)===room})};
+Game.prototype.roomSignature=function(){const s=this.s;return [this.activeRoom,this.visibleCats().map(c=>c.id).join(','),s.rooms,s.cats.length>s.capacity,s.clean<35,s.risk>45,this.bedCount(),s.furniture.toys].join('|')};
+Game.prototype.render=function(resetScroll=false){if(!this.s)return;this.ensureV6();
+ const box=$('content');const keep=this.tab==='room'&&!resetScroll&&this._sceneSignature===this.roomSignature()&&!!box.querySelector?.('#walkField');
+ if(!keep){const before=this.tab;const pos=box.scrollTop;baseRender.call(this,resetScroll);
+  if(before==='room'){this._sceneSignature=this.roomSignature();this.positionCats(false)}
+ }else{
+  $('moneyValue').textContent=`🪙 ${fmt(this.s.money)}`;$('dayValue').textContent=String(this.s.day);
+  $('capacityValue').textContent=`${this.s.cats.length} / ${this.s.capacity}`;
+  $('adoptedValue').textContent=String(this.s.adopted);$('arrivalsValue').textContent=timeFmt(this.s.nextArrival);
+  $('riskFill').style.width=`${this.s.risk}%`;$('riskValue').textContent=`${Math.round(this.s.risk)}%`;
+  $('capacityValue').parentElement.classList.toggle('statusbox-danger',this.s.cats.length>this.s.capacity);
+  this.refreshScene();if(!$('sheetOverlay').hidden)this.renderSheet();this.renderAdoptToast();
+ }
+};
+Game.prototype.renderRoom=function(){const s=this.s,visible=this.visibleCats(),extra=Math.max(0,s.cats.length-s.capacity),room=this.activeRoom||1;
+ const alert=extra?`<div class="banner danger">🚨 <strong>Теснота! ${extra} питомцев сверх нормы.</strong> Улучшайте уход и расширяйте приют, иначе его закроют.</div>`:
+  s.risk>45?`<div class="banner warning">⚠️ У приюта растёт риск закрытия. Проверьте расходы, уборку и количество мест.</div>`:`<div class="banner good">🌷 Котики гуляют сами! Нажми на любого из них, чтобы покормить, вымыть или полечить.</div>`;
+ const beds=Array.from({length:Math.min(6,this.bedCount())},()=>'<span class="stage-item">🛏️</span>').join('');
+ return `${alert}${s.clean<35?'<div class="banner warning">🧹 Лотки грязные! Пора убрать.</div>':''}
+ <div class="sectionhead"><h2>Живая комната 🐈</h2><small>${s.cats.length} в приюте · ${s.rooms} комн.</small></div>
+ <div class="room-picker"><button data-do="room-change" data-dir="-1" ${room<=1?'disabled':''} aria-label="Предыдущая комната">◀</button><div style="text-align:center"><strong>Комната ${room} из ${s.rooms}</strong><small>${visible.length} котиков гуляют здесь</small></div><button data-do="room-change" data-dir="1" ${room>=s.rooms?'disabled':''} aria-label="Следующая комната">▶</button></div>
+ <div class="walk-field" id="walkField"><div class="stage-wall"></div><div class="stage-floor"></div><div class="stage-rug"></div><div class="stage-window"></div><div class="stage-door" title="Здесь встречают новые семьи"></div><div class="stage-plant">🪴</div>
+ <div class="stage-staff">${this.caretaker().emoji}${s.staff.map(id=>STAFF.find(w=>w.id===id)?.icon||'').join('')}<small>команда</small></div>
+ <div class="stage-beds">${beds||'🧸'}</div><div class="stage-toys">${s.furniture.toys?'🧶 🪀 🐭':'🧶'}</div><div class="stage-bowls">🥣 🐟</div><div class="stage-litter">${s.clean<45?'💩 ':''}🧺</div>
+ ${visible.map(c=>{const score=average(c),col=barColor(score);return `<button class="walk-cat ${c.leaving?'leaving':''}" data-cat="${c.id}" data-walker="${c.id}" style="left:50%;top:50%" aria-label="${esc(c.name)}, состояние ${Math.round(score)} процентов. Открыть уход">
+  <div class="catbar" style="--bar-width:${Math.round(score)}%;--bar-color:${col}"><i></i></div><div class="walk-name">${esc(c.name)} ${c.baby?'🍼':''}</div>
+  <div class="walk-sprite">${svgCat(c,'now','moving')}</div>${c.fleas?'<span class="flea-sticker">🦟</span>':''}<div class="walk-bubble">${c.ready?'🏡 Скоро домой':needMessage(c)}</div></button>`}).join('')}
+ </div><p class="stage-tip">🐾 Они ходят, играют и отдыхают. Нажми на котика прямо в комнате!</p>
+ <div class="cleanbox"><div class="broom">🧹</div><div class="clean-main"><div class="clean-title" id="roomCleanTitle">Чистота комнаты · ${Math.round(s.clean)}%</div>${meter(s.clean)}</div><button class="mini-btn" data-do="clean" ${this.stock('litter')===0&&s.money<14?'disabled':''}>${this.stock('litter')?'Убрать · набор '+this.stock('litter'):'Убрать · 14 🪙'}</button></div>
+ <div class="newcomer"><span class="emoji">🚪</span><div><strong id="nextArrivalLabel">Следующий котик через ${timeFmt(s.nextArrival)}</strong><small>Поступления ускоряются. Мест: ${s.capacity}, сейчас: ${s.cats.length}.</small></div></div>
+ <p class="caution">Когда сытость, здоровье, чистота и шерсть станут зелёными и блох не останется, котик сможет найти семью. Не забывай о запасах в магазине.</p>`;
+};
+Game.prototype.positionCats=function(animated){if(this.tab!=='room')return;const roam=$('walkField');if(!roam)return;
+ const ids=this.visibleCats().map(c=>c.id);this.walkPositions??=new Map();const existing=[];
+ ids.forEach((id,index)=>{let p=this.walkPositions.get(id);if(!p){const col=index%2,row=Math.floor(index/2)%3;p={x:col?70:31,y:row===0?45:row===1?70:82};this.walkPositions.set(id,p)}existing.push(p)});
+ ids.forEach(id=>{const el=roam.querySelector(`[data-walker="${id}"]`);if(!el)return;const p=this.walkPositions.get(id);if(!animated)el.style.transition='none';el.style.left=p.x+'%';el.style.top=p.y+'%';if(!animated)requestAnimationFrame(()=>{if(el.isConnected)el.style.transition='left 2.75s ease-in-out,top 2.75s ease-in-out'})});
+};
+Game.prototype.ambientWalk=function(){if(!this.s||this.s.closed||document.hidden||this.tab!=='room'||!$('sheetOverlay').hidden||!$('modalOverlay').hidden)return;
+ const field=$('walkField');if(!field)return;this.walkPositions??=new Map();const placed=[];
+ for(const c of this.visibleCats()){
+  const el=field.querySelector(`[data-walker="${c.id}"]`);if(!el||c.leaving)continue;
+  // Mobile friendly bounded random wandering. Keep distance where practical.
+  let p;for(let i=0;i<12;i++){p={x:randint(17,83),y:randint(42,83)};if(placed.every(q=>Math.abs(q.x-p.x)>23||Math.abs(q.y-p.y)>18))break}
+  placed.push(p);this.walkPositions.set(c.id,p);el.style.left=p.x+'%';el.style.top=p.y+'%';
+  const resting=Math.random()<Math.min(.36,.07+this.bedCount()*.08);const playing=!resting&&Math.random()<.18;
+  el.classList.toggle('sleeping',resting);el.classList.toggle('playing',playing);
+  const bubble=el.querySelector('.walk-bubble');if(bubble)bubble.textContent=resting?'💤 Отдыхает':playing?'🧶 Играет':c.ready?'🏡 Едет семья':needMessage(c);
+ }
+};
+Game.prototype.refreshScene=function(){const room=$('walkField');if(!room)return;
+ for(const c of this.visibleCats()){const el=room.querySelector(`[data-walker="${c.id}"]`);if(!el)continue;
+  const val=average(c),color=barColor(val);el.querySelector('.catbar')?.style.setProperty('--bar-width',Math.round(val)+'%');el.querySelector('.catbar')?.style.setProperty('--bar-color',color);
+  el.setAttribute('aria-label',`${c.name}, состояние ${Math.round(val)} процентов. Открыть уход`);
+  if(!el.classList.contains('sleeping')&&!el.classList.contains('playing')){const b=el.querySelector('.walk-bubble');if(b)b.textContent=c.ready?'🏡 Скоро домой':needMessage(c)}
+ }
+ const title=$('roomCleanTitle');if(title)title.textContent=`Чистота комнаты · ${Math.round(this.s.clean)}%`;
+ const line=$('nextArrivalLabel');if(line)line.textContent=`Следующий котик через ${timeFmt(this.s.nextArrival)}`;
+ const meterNode=$('content').querySelector?.('.cleanbox .meter');if(meterNode){meterNode.style.setProperty('--meter',`${Math.round(this.s.clean)}%`);meterNode.style.setProperty('--color',barColor(this.s.clean))}
+};
+Game.prototype.renderShop=function(){const s=this.s;return `<div class="sectionhead"><h2>Магазин приюта 🛍️</h2><small>🪙 ${fmt(s.money)} монет</small></div>
+ <div class="banner good">🎀 Выбирай запасы и уютные вещи для котиков. За монеты, по рекламе или — в Android — в Google Play. Платить за спасение животных не обязательно.</div>
+ <div class="sectionhead space"><h2>Запасы и украшения</h2><small>Игровые монеты</small></div>
+ <div class="shop-grid">${Object.entries(SHOP).map(([id,d])=>{const count=id==='bed'?this.bedCount():id==='brush'?(this.hasBrush()?'есть':'нет'):id==='toy'?s.furniture.toys:this.stock(id);const owned=id==='brush'&&this.hasBrush();return `<div class="shop-product"><span class="goods-emoji">${d.icon}</span><strong>${d.name}</strong><p>${d.desc}</p><span class="stock">${id==='brush'?'Расчёска: ': 'В наличии: '}${count}</span><button class="btn btn-rose" data-do="buy-good" data-item="${id}" ${owned||s.money<d.price?'disabled':''}>${owned?'Куплено':'Купить · '+d.price+' 🪙'}</button>${['food','shampoo','flea','litter'].includes(id)?`<button class="btn btn-mint" data-do="ad-item" data-item="${id}" ${this.adBusy?'disabled':''}>📺 Реклама · +${id==='flea'?1:2} шт.</button>`:''}</div>`}).join('')}</div>
+ ${window.ShelterBilling?.isNative ? `<div class="sectionhead space"><h2>Наборы Google Play</h2><small>Реальные деньги</small></div>
+ <div class="banner">Покупки за реальные деньги работают только в Android-приложении Google Play. Цена и валюта берутся из официального окна Google Play. На вебе и в Яндекс Играх эти покупки отключены.</div>
+ ${Object.entries(PREMIUM).map(([id,d])=>{const price=this.googleProducts?.[id]?.price;const owned=!d.consumable&&this.wallet().brush;return `<div class="card"><div class="card-head"><div class="card-emoji">${d.icon}</div><div><h3>${esc(d.name)}</h3><p>${esc(d.desc)}</p><small class="premium-prices">${price?esc(price):'Цена появится в Google Play'}</small></div></div><div class="staff-foot"><span class="shop-badge">${d.consumable?'Набор запасов':'Постоянный бонус'}</span><button class="btn btn-rose smallbtn" data-do="buy-premium" data-item="${id}" ${!window.ShelterBilling?.isAvailable||!price||owned||this.purchaseBusy?'disabled':''}>${owned?'Куплено':price?'Купить за '+esc(price):'Только Android'}</button></div></div>`}).join('')}
+ <button class="btn btn-light" data-do="restore-purchases" style="width:100%" ${!window.ShelterBilling?.isAvailable?'disabled':''}>↻ Восстановить покупки Google Play</button>
+ ` : ''}<p class="footer-note">Все покупки доступны за игровые монеты; также есть добровольные рекламные бонусы. Платные наборы в Android — только виртуальные предметы игры, не реальные пожертвования.</p>`};
+Game.prototype.renderSheet=function(){const c=this.s.cats.find(x=>x.id===this.selectedId);if(!c){this.closeSheet();return}
+ const node=$('sheet'),old=node.scrollTop,score=average(c),v=c.stats;
+ const nbuttons=NEEDS.map(n=>{const stockKey=EXTRA_CARE_TO_STOCK[n.key];const count=stockKey?this.stock(stockKey):0;const cost=count?0:n.cost;const bonus=n.key==='coat'&&this.hasBrush()?20:0;
+ return `<button class="action ${v[n.key]<75?'recommended':''}" data-do="care" data-id="${c.id}" data-key="${n.key}" ${c.ready||v[n.key]>=99||this.s.money<cost?'disabled':''}><span>${n.icon}</span><b>${n.short}</b><small>+${Math.round(n.gain+bonus)}% · ${count?`из запаса (${count})`:cost+' 🪙'}</small></button>`}).join('');
+ node.innerHTML=`<div class="sheethead"><div><h2>${esc(c.name)} ${c.baby?'🍼':''}</h2><small>${COLORS[c.palette][3]} · ${PATTERNS[c.pattern].toLowerCase()} · ${c.baby?'котёнок':'взрослый котик'} · день ${c.arrival}</small></div><button class="closebtn" data-do="close-sheet" aria-label="Закрыть карточку">✕</button></div>
+ <div class="compare"><div class="comparebox"><span>БЫЛО 😿</span>${svgCat(c,'before','before')}${c.beforeFleas?'<span class="detail-flea">🦟</span>':''}<small class="comparrow">При поступлении</small></div><div class="comparebox now"><span>СТАЛО ${score>=80?'😻':'🐱'}</span>${svgCat(c,'now','detail')}${c.fleas?'<span class="detail-flea">🦟</span>':''}<small class="comparrow">Сейчас · ${Math.round(score)}%</small></div></div>
+ <div class="needs">${NEEDS.map(n=>`<div class="needline"><span>${n.icon} ${n.name}</span>${meter(v[n.key])}<b>${Math.round(v[n.key])}%</b></div>`).join('')}</div>
+ ${c.fleas?'<div class="banner warning">🦟 Обнаружены блохи. Обработай котика, прежде чем искать ему новый дом.</div>':''}
+ ${c.ready?`<div class="banner good space">🏡 Все показатели зелёные! За ${esc(c.name)} скоро приедет семья.</div>`:`<div class="actions">${nbuttons}
+ <button class="action ${c.fleas?'recommended':''}" data-do="flea-care" data-id="${c.id}" ${!c.fleas||(!this.stock('flea')&&this.s.money<17)?'disabled':''}><span>🩹</span><b>От блох</b><small>${c.fleas?(this.stock('flea')?'Из запаса ('+this.stock('flea')+')':'17 🪙'):'Блох нет ✓'}</small></button></div>`}
+ ${!c.baby?`<div class="vetbox"><span style="font-size:25px">🩺</span><div><strong>${c.vetDone?'Ветпрограмма выполнена ✅':'Ветеринарная программа'}</strong><small>${c.vetDone?'Неожиданного пополнения не будет':'Снижает риск неожиданного появления котят'}</small></div>${c.vetDone?'':`<button class="mini-btn" data-do="vet" data-id="${c.id}" ${this.s.money<25||c.ready?'disabled':''}>25 🪙</button>`}</div>`:'<div class="vetbox">🍼 <div><strong>Котёнок</strong><small>Нуждается в особом уходе.</small></div></div>'}
+ <div class="supply-alert">🐟 Корм: ${this.stock('food')} · 🧴 Шампунь: ${this.stock('shampoo')} · 🩹 От блох: ${this.stock('flea')} · 🛏️ Лежанки: ${this.bedCount()}</div>
+ <div class="footer-note">В магазине можно купить более выгодные наборы или получить их за добровольный просмотр рекламы.</div>`;
+ node.scrollTop=old;
+};
+Game.prototype.action=function(catId,key){const c=this.s.cats.find(x=>x.id===catId),n=NEEDS.find(x=>x.key===key);if(!c||!n||c.leaving||c.ready)return;
+ if(c.stats[key]>=99){this.info('Здесь всё хорошо.');return}
+ const stockKey=EXTRA_CARE_TO_STOCK[key];if(stockKey&&this.stock(stockKey)>0)this.consumeStock(stockKey);else if(!this.spend(n.cost,`${c.name}: ${n.short.toLowerCase()}`))return;
+ const before=c.stats[key];const gain=n.gain*(key==='health'?this.caretaker().heal:1)+(key==='coat'&&this.hasBrush()?20:0);
+ c.stats[key]=clamp(c.stats[key]+gain);if(key==='hygiene')c.stats.coat=clamp(c.stats.coat+6);
+ this.checkReady();this.info(`${n.icon} ${c.name}: ${Math.round(before)}% → ${Math.round(c.stats[key])}%`);this._sceneSignature='';this.render();this.save();
+};
+Game.prototype.fleaCare=function(catId){const c=this.s.cats.find(x=>x.id===catId);if(!c||!c.fleas||c.ready)return;
+ if(this.stock('flea')>0)this.consumeStock('flea');else if(!this.spend(17,`${c.name}: обработка от блох`))return;
+ c.fleas=false;c.stats.health=clamp(c.stats.health+46);c.stats.hygiene=clamp(c.stats.hygiene+12);
+ this.info(`🩹 ${c.name} избавился от блох и чувствует себя лучше!`);this.checkReady();this._sceneSignature='';this.render();this.save();
+};
+Game.prototype.clean=function(){if(this.stock('litter')>0){this.consumeStock('litter');this.s.clean=clamp(this.s.clean+49);this.s.risk=clamp(this.s.risk-6);this.info('🧹 Использован набор для уборки. В комнате снова чисто!');this.checkReady();this._sceneSignature='';this.render();this.save()}else baseClean.call(this)};
+Game.prototype.checkReady=function(){for(const cat of this.s.cats){if(cat.leaving||cat.ready||cat.fleas)continue;if(NEEDS.every(n=>cat.stats[n.key]>=80)&&this.s.clean>=35){cat.ready=true;const session=this.session;setTimeout(()=>{if(session===this.session&&this.s&&!this.s.closed)this.adopt(cat.id)},1500)}}};
+Game.prototype.tick=function(){const before=this.s?.seconds??0;baseTick.call(this);if(!this.s||this.s.closed||this.s.seconds===before)return;
+ if(this.s.seconds%9===0){for(const c of this.s.cats){if(c.fleas&&!c.leaving){c.stats.health=clamp(c.stats.health-.7);c.stats.hygiene=clamp(c.stats.hygiene-.7)}}
+  const beds=this.bedCount();const sleepy=this.s.cats.filter(c=>!c.leaving).sort((a,b)=>a.stats.health-b.stats.health).slice(0,beds);
+  sleepy.forEach(c=>{c.stats.health=clamp(c.stats.health+3);c.stats.coat=clamp(c.stats.coat+2)});
+  if(this.s.furniture.toys){const c=pick(this.s.cats.filter(x=>!x.leaving));if(c)c.stats.coat=clamp(c.stats.coat+Math.min(4,this.s.furniture.toys))}
+  this.checkReady();this.save();
+ }
+};
+const baseReward=Game.prototype.reward;
+Game.prototype.reward=async function(type){if(!type.startsWith('item_'))return baseReward.call(this,type);
+ const id=type.slice(5);if(!['food','shampoo','flea','litter'].includes(id)||this.adBusy)return;
+ this.adBusy=true;let ok=false;this.info('📺 Открываем рекламу…');
+ try{if(window.ShelterAds?.rewarded)ok=await window.ShelterAds.rewarded(type);else{console.log('Ad Triggered (browser demo)',type);ok=true}}catch(e){console.warn(e)}
+ this.adBusy=false;if(!this.s||this.s.closed)return;if(!ok){this.info('Просмотр не подтверждён — награда не начислена.');this.render();return}
+ const qty=id==='flea'?1:2;this.s.inventory[id]=(this.s.inventory[id]||0)+qty;this.info(`${SHOP[id].icon} Бесплатный набор получен: +${qty} шт.`);this.render();this.save();
+};
+Game.prototype.dispatch=function(e){const node=e.target.closest?.('[data-do],[data-cat]');if(!node)return;const act=node.dataset.do;
+ if(act==='buy-good'){this.buyGood(node.dataset.item);return}
+ if(act==='buy-premium'){this.buyPremium(node.dataset.item);return}
+ if(act==='ad-item'){this.reward('item_'+node.dataset.item);return}
+ if(act==='flea-care'){this.fleaCare(Number(node.dataset.id));return}
+ if(act==='room-change'){this.activeRoom=clamp((this.activeRoom||1)+Number(node.dataset.dir),1,this.s.rooms);this._sceneSignature='';this.render(true);return}
+ if(act==='restore-purchases'){this.loadBilling();this.info('Проверяем ранее совершённые покупки…');return}
+ if(act==='home'&&this.walkTimer){clearInterval(this.walkTimer);this.walkTimer=null}
+ baseDispatch.call(this,e);
+};
+const renderOther=Game.prototype.render;
+// Store view replaces cash fallback, preserving the original cash page.
+const oldRenderCash=Game.prototype.renderCash;
+Game.prototype.renderCash=function(){return oldRenderCash.call(this)};
+const renderWithShop=Game.prototype.render;
+Game.prototype.render=function(resetScroll=false){
+ // Render the new store view; all other tabs keep the optimized live scene renderer.
+ if(this.s&&this.tab==='shop'){this.ensureV6();const box=$('content'),pos=resetScroll?0:box.scrollTop;
+  $('moneyValue').textContent=`🪙 ${fmt(this.s.money)}`;$('dayValue').textContent=String(this.s.day);$('capacityValue').textContent=`${this.s.cats.length} / ${this.s.capacity}`;
+  $('adoptedValue').textContent=String(this.s.adopted);$('arrivalsValue').textContent=timeFmt(this.s.nextArrival);$('riskFill').style.width=`${this.s.risk}%`;$('riskValue').textContent=`${Math.round(this.s.risk)}%`;
+  document.querySelectorAll('[data-tab]').forEach(n=>n.classList.toggle('active',n.dataset.tab==='shop'));
+  box.innerHTML=this.renderShop();box.scrollTop=pos;if(!$('sheetOverlay').hidden)this.renderSheet();this.renderAdoptToast();return;
+ }
+ return renderWithShop.call(this,resetScroll);
+};
+/* ============== end V6 enhancements ============== */
+
+const game=new Game();
+// Debug interface is deliberately opt-in and unavailable unless explicitly requested via query param.
+if(new URLSearchParams(location.search).has('qa'))Object.defineProperty(window,'__shelterQA',{value:game,writable:false});
+})();
+</script>
+</body></html>
