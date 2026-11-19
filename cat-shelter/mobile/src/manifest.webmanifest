@@ -1,0 +1,14 @@
+{
+  "name": "Лапки добра — жизнь приюта",
+  "short_name": "Лапки добра",
+  "description": "Спасай котиков, ухаживай за ними и развивай приют",
+  "lang": "ru",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff7ef",
+  "theme_color": "#fff7ef",
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png"}
+  ]
+}
